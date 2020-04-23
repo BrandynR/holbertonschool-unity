@@ -681,11 +681,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 8eb6f4b5e256d451d87ddbab31785b4d, type: 2}
+      objectReference: {fileID: 2100000, guid: 353399305e3774417977c67f684a20a9, type: 2}
     - target: {fileID: 4052970412125280738, guid: 8c6665fd5b22f4a7cb7dd82ba2b071d5,
         type: 3}
       propertyPath: m_Name
       value: Textured Ball
+      objectReference: {fileID: 0}
+    - target: {fileID: 4052970412125280738, guid: 8c6665fd5b22f4a7cb7dd82ba2b071d5,
+        type: 3}
+      propertyPath: m_TagString
+      value: Obstacles
       objectReference: {fileID: 0}
     - target: {fileID: 4052970412125280750, guid: 8c6665fd5b22f4a7cb7dd82ba2b071d5,
         type: 3}
@@ -774,7 +779,7 @@ PrefabInstance:
     - target: {fileID: 4052970412125280750, guid: 8c6665fd5b22f4a7cb7dd82ba2b071d5,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4052970412125280750, guid: 8c6665fd5b22f4a7cb7dd82ba2b071d5,
         type: 3}
