@@ -13,12 +13,39 @@ public class PlayerController : MonoBehaviour
     public Text healthText;
     public Image winLoseBG;
     public Text winLoseText;
+    public Joystick joystick;
     public GameObject winLose;
     private bool isCoroutine = true;
+    public float stickSpeed = 1f;
+    float horizontalMove = 0f;
+    float verticalMove = 0f;
 
     // Update is called once per frame
     void FixedUpdate()
     {
+        //joystick touchscreen controls
+        if (joystick.Horizontal >= .1f)
+        {
+            rb.AddForce(stickSpeed * Time.deltaTime, 0, 0);
+        } else if (joystick.Horizontal <= -.1f)
+        {
+            rb.AddForce(-stickSpeed * Time.deltaTime, 0, 0);
+        } else
+        {
+            horizontalMove = 0f;
+        }
+        if (joystick.Vertical >= .1f)
+        {
+            rb.AddForce(0, 0, stickSpeed * Time.deltaTime);
+        }else if (joystick.Vertical <= -.1f)
+        {
+            rb.AddForce(0, 0, -stickSpeed * Time.deltaTime);
+        }else
+        {
+            verticalMove = 0f;
+        }
+
+        //keyboard controls for player
         if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W))
             rb.AddForce(0, 0, speed * Time.deltaTime);
         if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S))
