@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-///<summary>Stops a timer</summary>
+///<summary>Stops the timer when 'Player' reaches the flag</summary>
 public class WinTrigger : MonoBehaviour
 {
     public Text timerText;
@@ -13,7 +13,7 @@ public class WinTrigger : MonoBehaviour
         if (change.name == "Player")
         {
             change.gameObject.GetComponent<Timer>().enabled = false;
-            timerText.fontSize = 80;
+            timerText.fontSize = 75;
             timerText.color = Color.green;
         }
     }

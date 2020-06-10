@@ -1,35 +1,32 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-/// <summary>Contains scripted actions for the main camera.</summary>
+///<summary>Handles camera control, allowing player to rotate the camera with the mouse</summary>
 public class CameraController : MonoBehaviour
 {
-    /// <summary>Player object to attach to.</summary>
-    public GameObject player;
+    public float turn = 3f;
+    public Transform player;
+    private Transform tsfrm;
+    private Vector3 offset;
+    private Quaternion turnX;
+    private Quaternion turnY;
 
-    // Previous mouse position.
-    private Vector3 mousePos;
-
-    /// <summary>Move the camera to offset from player and allow rotation.</summary>
-    void Update()
+    void Awake()
     {
-        float angle;
-        Vector3 player = this.player.transform.position;
-        Vector3 position = Vector3.zero;
+        tsfrm = GetComponent<Transform>();
+    }
 
-        if (Input.GetMouseButtonDown(1)) {
-            this.mousePos = Input.mousePosition;
-        } else if (Input.GetMouseButton(1)) {
-            angle = (Input.mousePosition.x - this.mousePos.x) / Screen.width * 180;
-            this.mousePos = Input.mousePosition;
-            this.transform.Rotate(new Vector3(0, angle, 0), Space.World);
-        }
+    void Start()
+    {   
+        Cursor.visible = false;
+        offset = new Vector3(0, 1.25f, -6.25f);
+    }
 
-        angle = this.transform.rotation.eulerAngles.y;
-        position.x = player.x + Mathf.Sin(Mathf.Deg2Rad * angle) * -6.25f;
-        position.y = player.y + 1.25f;
-        position.z = player.z + Mathf.Cos(Mathf.Deg2Rad * angle) * -6.25f;
-        this.transform.position = position;
+    void LateUpdate()
+    {
+        turnX = Quaternion.AngleAxis(Input.GetAxis("Mouse X") * turn, Vector3.up);
+        turnY = Quaternion.AngleAxis(Input.GetAxis("Mouse Y") * turn, Vector3.left);
+        offset = turnX * turnY * offset;
+        transform.position = player.position + offset;
+        transform.LookAt(player.position + new Vector3(0, 0.24f, 0));
     }
 }
