@@ -10,7 +10,6 @@ public class Board : MonoBehaviour {
 
 	public int m_header = 8;
 
-
 	// Use this for initialization
 
 	Transform[,] m_grid;
