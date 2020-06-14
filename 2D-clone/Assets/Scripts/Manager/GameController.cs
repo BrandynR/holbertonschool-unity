@@ -66,7 +66,7 @@ public class GameController : MonoBehaviour {
 
 	// the panel that display when we Pause
 	public GameObject m_pausePanel;
-
+	Ghost m_ghost;
 
 
 	// Use this for initialization
@@ -82,7 +82,7 @@ public class GameController : MonoBehaviour {
 		m_spawner = GameObject.FindObjectOfType<Spawner>();
 		m_soundManager = GameObject.FindObjectOfType<SoundManager>();
 		m_scoreManager = GameObject.FindObjectOfType<ScoreManager>();
-
+		m_ghost = GameObject.FindObjectOfType<Ghost>();
 
 		m_timeToNextKeyDown = Time.time + m_keyRepeatRateDown;
 		m_timeToNextKeyLeftRight = Time.time + m_keyRepeatRateLeftRight;
@@ -140,6 +140,13 @@ public class GameController : MonoBehaviour {
 		}
 
 		PlayerInput ();
+	}
+	void LateUpdate()
+	{
+		if (m_ghost)
+		{
+			m_ghost.DrawGhost(m_activeShape,m_gameBoard);
+		}
 	}
 
 	void PlayerInput ()
@@ -236,6 +243,10 @@ public class GameController : MonoBehaviour {
 		m_activeShape.MoveUp ();
 		m_gameBoard.StoreShapeInGrid (m_activeShape);
 
+		if (m_ghost)
+		{
+			m_ghost.Reset();
+		}
 		// spawn a new shape
 		m_activeShape = m_spawner.SpawnShape ();
 
