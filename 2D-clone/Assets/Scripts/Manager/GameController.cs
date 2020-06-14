@@ -38,6 +38,12 @@ public class GameController : MonoBehaviour {
 
 	public IconToggle m_rotIconToggle;
 
+	public bool isPause = false;
+
+	public GameObject m_pausePanel;
+
+	public bool m_isPaused = false;
+
 	bool m_clockwise = true;
 
 	bool m_gameOver = false;
@@ -89,7 +95,10 @@ public class GameController : MonoBehaviour {
 		{
 			m_gameOverPanel.SetActive(false);
 		}
-
+		if (m_pausePanel)
+		{
+			m_pausePanel.SetActive(false);
+		}
 
 	}
 
@@ -187,6 +196,10 @@ public class GameController : MonoBehaviour {
 		{
 			ToggleRotDirection();
 		}
+		else if (Input.GetButtonDown("Pause"))
+		{
+			TogglePause();
+		}
 	}
 
 	// shape lands
@@ -247,6 +260,7 @@ public class GameController : MonoBehaviour {
 	public void Restart()
 	{
 		//Debug.Log("Restart");
+		Time.timeScale = 1f;
 		SceneManager.LoadScene("TetrisClone");
 	}
 
@@ -263,6 +277,23 @@ public class GameController : MonoBehaviour {
 		if (m_rotIconToggle)
 		{
 			m_rotIconToggle.ToggleIcon(m_clockwise);
+		}
+	}
+	public void TogglePause()
+	{
+		if (m_gameOver)
+		{
+			return;
+		}
+		m_isPaused = !m_isPaused;
+		if (m_pausePanel)
+		{
+			m_pausePanel.SetActive(m_isPaused);
+			if (m_soundManager)
+			{
+				m_soundManager.m_musicSource.volume = (m_isPaused) ? m_soundManager.m_musicVolume * 0.25f : m_soundManager.m_musicVolume;
+			}
+			Time.timeScale = (m_isPaused) ? 0 : 1;
 		}
 	}
 }
