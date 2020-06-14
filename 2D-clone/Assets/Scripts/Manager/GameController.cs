@@ -10,43 +10,63 @@ public class GameController : MonoBehaviour {
 	// reference to our spawner 
 	Spawner m_spawner;
 
+	// reference to our soundManager
 	SoundManager m_soundManager;
+
+	// reference to our scoreManager
+	ScoreManager m_scoreManager;
 
 	// currently active shape
 	Shape m_activeShape;
 
+	// starting drop interval value
 	public float m_dropInterval = 0.1f;
 
+	// drop interval modified by level
+	float m_dropIntervalModded;
+
+	// the next time that the active shape can drop
 	float m_timeToDrop;
 
+	// the next time that the active shape can move left or right
 	float m_timeToNextKeyLeftRight;
 
+	// the time window we can move left and right
 	[Range(0.02f,1f)]
 	public float m_keyRepeatRateLeftRight = 0.25f;
 
+	// the next time that the active shape can move down
 	float m_timeToNextKeyDown;
 
+	// the time window we can move down
 	[Range(0.01f,0.5f)]
 	public float m_keyRepeatRateDown = 0.01f;
 
+	// the time window we can rotate 
 	float m_timeToNextKeyRotate;
 
+	// the time window we can rotate the shape
 	[Range(0.02f,1f)]
 	public float m_keyRepeatRateRotate = 0.25f;
 
+	// the panel that displays when our game is over
 	public GameObject m_gameOverPanel;
 
+	// whether we have reached the game over condition
+	bool m_gameOver = false;
+
+	// toggles the rotation direction icon
 	public IconToggle m_rotIconToggle;
 
-	public bool isPause = false;
-
-	public GameObject m_pausePanel;
-
-	public bool m_isPaused = false;
-
+	// whether we are rotating clockwise or not when we click the up arrow
 	bool m_clockwise = true;
 
-	bool m_gameOver = false;
+	// whether we are paused
+	public bool m_isPaused = false;
+
+	// the panel that display when we Pause
+	public GameObject m_pausePanel;
+
 
 
 	// Use this for initialization
@@ -61,6 +81,7 @@ public class GameController : MonoBehaviour {
 		m_gameBoard = GameObject.FindObjectOfType<Board>();
 		m_spawner = GameObject.FindObjectOfType<Spawner>();
 		m_soundManager = GameObject.FindObjectOfType<SoundManager>();
+		m_scoreManager = GameObject.FindObjectOfType<ScoreManager>();
 
 
 		m_timeToNextKeyDown = Time.time + m_keyRepeatRateDown;
@@ -75,6 +96,11 @@ public class GameController : MonoBehaviour {
 		if (!m_soundManager)
 		{
 			Debug.LogWarning("WARNING!  There is no sound manager defined!");
+		}
+
+		if (!m_scoreManager)
+		{
+			Debug.LogWarning("WARNING!  There is no score manager defined!");
 		}
 
 		if (!m_spawner)
@@ -95,18 +121,20 @@ public class GameController : MonoBehaviour {
 		{
 			m_gameOverPanel.SetActive(false);
 		}
+
 		if (m_pausePanel)
 		{
 			m_pausePanel.SetActive(false);
 		}
-
+			
+		m_dropIntervalModded = Mathf.Clamp(m_dropInterval - ((float)m_scoreManager.m_level * 0.1f), 0.05f, 1f);
 	}
 
 	// Update is called once per frame
 	void Update () 
 	{
 		// if we are missing a spawner or game board or active shape, then we don't do anything
-		if (!m_spawner || !m_gameBoard || !m_activeShape || m_gameOver || !m_soundManager)
+		if (!m_spawner || !m_gameBoard || !m_activeShape || m_gameOver || !m_soundManager || !m_scoreManager)
 		{
 			return;
 		}
@@ -119,7 +147,7 @@ public class GameController : MonoBehaviour {
 		// example of NOT using the Input Manager
 		//if (Input.GetKey ("right") && (Time.time > m_timeToNextKey) || Input.GetKeyDown (KeyCode.RightArrow)) 
 
-		if (Input.GetButton ("MoveRight") && (Time.time > m_timeToNextKeyLeftRight) || Input.GetButtonDown ("MoveRight")) 
+		if ((Input.GetButton ("MoveRight") && (Time.time > m_timeToNextKeyLeftRight)) || Input.GetButtonDown ("MoveRight")) 
 		{
 			m_activeShape.MoveRight ();
 			m_timeToNextKeyLeftRight = Time.time + m_keyRepeatRateLeftRight;
@@ -134,9 +162,8 @@ public class GameController : MonoBehaviour {
 				PlaySound (m_soundManager.m_moveSound,0.5f);
 
 			}
-
 		}
-		else if  (Input.GetButton ("MoveLeft") && (Time.time > m_timeToNextKeyLeftRight) || Input.GetButtonDown ("MoveLeft")) 
+		else if  ((Input.GetButton ("MoveLeft") && (Time.time > m_timeToNextKeyLeftRight)) || Input.GetButtonDown ("MoveLeft")) 
 		{
 			m_activeShape.MoveLeft ();
 			m_timeToNextKeyLeftRight = Time.time + m_keyRepeatRateLeftRight;
@@ -149,20 +176,20 @@ public class GameController : MonoBehaviour {
 			else
 			{
 				PlaySound (m_soundManager.m_moveSound,0.5f);
-
 			}
-
 		}
 		else if  (Input.GetButtonDown ("Rotate") && (Time.time > m_timeToNextKeyRotate)) 
 		{
 			//m_activeShape.RotateRight();
 			m_activeShape.RotateClockwise(m_clockwise);
+
 			m_timeToNextKeyRotate = Time.time + m_keyRepeatRateRotate;
 
 			if (!m_gameBoard.IsValidPosition (m_activeShape)) 
 			{
 				//m_activeShape.RotateLeft();
 				m_activeShape.RotateClockwise(!m_clockwise);
+
 				PlaySound (m_soundManager.m_errorSound,0.5f);
 			}
 			else
@@ -170,11 +197,12 @@ public class GameController : MonoBehaviour {
 				PlaySound (m_soundManager.m_moveSound,0.5f);
 
 			}
-
 		}
-		else if  (Input.GetButton ("MoveDown") && (Time.time > m_timeToNextKeyDown) ||  (Time.time > m_timeToDrop)) 
+
+		else if  ((Input.GetButton ("MoveDown") && (Time.time > m_timeToNextKeyDown)) ||  (Time.time > m_timeToDrop)) 
 		{
-			m_timeToDrop = Time.time + m_dropInterval;
+			m_timeToDrop = Time.time + m_dropIntervalModded;
+
 			m_timeToNextKeyDown = Time.time + m_keyRepeatRateDown;
 
 			m_activeShape.MoveDown ();
@@ -190,7 +218,6 @@ public class GameController : MonoBehaviour {
 					LandShape ();
 				}
 			}
-
 		}
 		else if (Input.GetButtonDown("ToggleRot"))
 		{
@@ -225,15 +252,24 @@ public class GameController : MonoBehaviour {
 
 		if (m_gameBoard.m_completedRows > 0)
 		{
-			if (m_gameBoard.m_completedRows > 1)
+			m_scoreManager.ScoreLines(m_gameBoard.m_completedRows);
+
+			if (m_scoreManager.didLevelUp)
 			{
-				AudioClip randomVocal = m_soundManager.GetRandomClip(m_soundManager.m_vocalClips);
-				PlaySound(randomVocal);
+				m_dropIntervalModded = Mathf.Clamp(m_dropInterval - ((float)m_scoreManager.m_level * 0.05f), 0.05f, 1f);
+				PlaySound(m_soundManager.m_levelUpVocalClip);
 			}
+			else
+			{
+				if (m_gameBoard.m_completedRows > 1)
+				{
+					AudioClip randomVocal = m_soundManager.GetRandomClip(m_soundManager.m_vocalClips);
+					PlaySound(randomVocal);
+				}
+			}
+
 			PlaySound (m_soundManager.m_clearRowSound);
 		}
-
-
 	}
 
 	// triggered when we are over the board's limit
@@ -259,7 +295,6 @@ public class GameController : MonoBehaviour {
 	// reload the level
 	public void Restart()
 	{
-		//Debug.Log("Restart");
 		Time.timeScale = 1f;
 		SceneManager.LoadScene("TetrisClone");
 	}
@@ -271,6 +306,7 @@ public class GameController : MonoBehaviour {
 			AudioSource.PlayClipAtPoint (clip, Camera.main.transform.position, Mathf.Clamp(m_soundManager.m_fxVolume*volMultiplier,0.05f,1f));
 		}
 	}
+
 	public void ToggleRotDirection()
 	{
 		m_clockwise = !m_clockwise;
@@ -279,21 +315,23 @@ public class GameController : MonoBehaviour {
 			m_rotIconToggle.ToggleIcon(m_clockwise);
 		}
 	}
+
 	public void TogglePause()
 	{
-		if (m_gameOver)
-		{
-			return;
-		}
 		m_isPaused = !m_isPaused;
+
 		if (m_pausePanel)
 		{
 			m_pausePanel.SetActive(m_isPaused);
+
 			if (m_soundManager)
 			{
 				m_soundManager.m_musicSource.volume = (m_isPaused) ? m_soundManager.m_musicVolume * 0.25f : m_soundManager.m_musicVolume;
+
 			}
+
 			Time.timeScale = (m_isPaused) ? 0 : 1;
 		}
 	}
+
 }
