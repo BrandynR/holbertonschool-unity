@@ -10,21 +10,23 @@ public class GameController : MonoBehaviour {
 	// reference to our spawner 
 	Spawner m_spawner;
 
+	SoundManager m_soundManager;
+
 	// currently active shape
 	Shape m_activeShape;
 
-	public float m_dropInterval = 0.9f;
+	public float m_dropInterval = 0.1f;
 
 	float m_timeToDrop;
 
 	float m_timeToNextKeyLeftRight;
 
 	[Range(0.02f,1f)]
-	public float m_keyRepeatRateLeftRight = 0.15f;
+	public float m_keyRepeatRateLeftRight = 0.25f;
 
 	float m_timeToNextKeyDown;
 
-	[Range(0.01f,1f)]
+	[Range(0.01f,0.5f)]
 	public float m_keyRepeatRateDown = 0.01f;
 
 	float m_timeToNextKeyRotate;
@@ -48,6 +50,8 @@ public class GameController : MonoBehaviour {
 		// find spawner and board with generic version of GameObject.FindObjectOfType, slower but less typing
 		m_gameBoard = GameObject.FindObjectOfType<Board>();
 		m_spawner = GameObject.FindObjectOfType<Spawner>();
+		m_soundManager = GameObject.FindObjectOfType<SoundManager>();
+
 
 		m_timeToNextKeyDown = Time.time + m_keyRepeatRateDown;
 		m_timeToNextKeyLeftRight = Time.time + m_keyRepeatRateLeftRight;
@@ -56,6 +60,11 @@ public class GameController : MonoBehaviour {
 		if (!m_gameBoard)
 		{
 			Debug.LogWarning("WARNING!  There is no game board defined!");
+		}
+
+		if (!m_soundManager)
+		{
+			Debug.LogWarning("WARNING!  There is no sound manager defined!");
 		}
 
 		if (!m_spawner)
@@ -76,22 +85,25 @@ public class GameController : MonoBehaviour {
 		{
 			m_gameOverPanel.SetActive(false);
 		}
+
+
 	}
 
 	// Update is called once per frame
 	void Update () 
 	{
 		// if we are missing a spawner or game board or active shape, then we don't do anything
-		if (!m_spawner || !m_gameBoard || !m_activeShape || m_gameOver)
+		if (!m_spawner || !m_gameBoard || !m_activeShape || m_gameOver || !m_soundManager)
 		{
 			return;
 		}
+
 		PlayerInput ();
 	}
 
 	void PlayerInput ()
 	{
-		//NOT using the Input Manager
+		// example of NOT using the Input Manager
 		//if (Input.GetKey ("right") && (Time.time > m_timeToNextKey) || Input.GetKeyDown (KeyCode.RightArrow)) 
 
 		if (Input.GetButton ("MoveRight") && (Time.time > m_timeToNextKeyLeftRight) || Input.GetButtonDown ("MoveRight")) 
@@ -102,6 +114,12 @@ public class GameController : MonoBehaviour {
 			if (!m_gameBoard.IsValidPosition (m_activeShape)) 
 			{
 				m_activeShape.MoveLeft ();
+				PlaySound (m_soundManager.m_errorSound,0.5f);
+			}
+			else
+			{
+				PlaySound (m_soundManager.m_moveSound,0.5f);
+
 			}
 
 		}
@@ -113,6 +131,12 @@ public class GameController : MonoBehaviour {
 			if (!m_gameBoard.IsValidPosition (m_activeShape)) 
 			{
 				m_activeShape.MoveRight ();
+				PlaySound (m_soundManager.m_errorSound,0.5f);
+			}
+			else
+			{
+				PlaySound (m_soundManager.m_moveSound,0.5f);
+
 			}
 
 		}
@@ -124,6 +148,12 @@ public class GameController : MonoBehaviour {
 			if (!m_gameBoard.IsValidPosition (m_activeShape)) 
 			{
 				m_activeShape.RotateLeft();
+				PlaySound (m_soundManager.m_errorSound,0.5f);
+			}
+			else
+			{
+				PlaySound (m_soundManager.m_moveSound,0.5f);
+
 			}
 
 		}
@@ -166,6 +196,21 @@ public class GameController : MonoBehaviour {
 
 		// remove completed rows from the board if we have any 
 		m_gameBoard.ClearAllRows();
+
+
+		PlaySound (m_soundManager.m_dropSound);
+
+		if (m_gameBoard.m_completedRows > 0)
+		{
+			if (m_gameBoard.m_completedRows > 1)
+			{
+				AudioClip randomVocal = m_soundManager.GetRandomClip(m_soundManager.m_vocalClips);
+				PlaySound(randomVocal);
+			}
+			PlaySound (m_soundManager.m_clearRowSound);
+		}
+
+
 	}
 
 	// triggered when we are over the board's limit
@@ -178,6 +223,11 @@ public class GameController : MonoBehaviour {
 		if (m_gameOverPanel) {
 			m_gameOverPanel.SetActive (true);
 		}
+		// play the failure sound effect
+		PlaySound (m_soundManager.m_gameOverSound,5f);
+
+		// play "game over" vocal
+		PlaySound (m_soundManager.m_gameOverVocalClip,5f);
 
 		// set the game over condition to true
 		m_gameOver = true;
@@ -188,7 +238,13 @@ public class GameController : MonoBehaviour {
 	{
 		//Debug.Log("Restart");
 		SceneManager.LoadScene("TetrisClone");
-		//Application.LoadLevel(Application.loadedLevel);
 	}
 
+	// plays a sound with an option volume multiplier
+	void PlaySound (AudioClip clip, float volMultiplier = 1.0f)
+	{
+		if (m_soundManager.m_fxEnabled && clip) {
+			AudioSource.PlayClipAtPoint (clip, Camera.main.transform.position, Mathf.Clamp(m_soundManager.m_fxVolume*volMultiplier,0.05f,1f));
+		}
+	}
 }
