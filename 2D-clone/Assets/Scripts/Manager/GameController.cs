@@ -36,6 +36,10 @@ public class GameController : MonoBehaviour {
 
 	public GameObject m_gameOverPanel;
 
+	public IconToggle m_rotIconToggle;
+
+	bool m_clockwise = true;
+
 	bool m_gameOver = false;
 
 
@@ -142,12 +146,14 @@ public class GameController : MonoBehaviour {
 		}
 		else if  (Input.GetButtonDown ("Rotate") && (Time.time > m_timeToNextKeyRotate)) 
 		{
-			m_activeShape.RotateRight();
+			//m_activeShape.RotateRight();
+			m_activeShape.RotateClockwise(m_clockwise);
 			m_timeToNextKeyRotate = Time.time + m_keyRepeatRateRotate;
 
 			if (!m_gameBoard.IsValidPosition (m_activeShape)) 
 			{
-				m_activeShape.RotateLeft();
+				//m_activeShape.RotateLeft();
+				m_activeShape.RotateClockwise(!m_clockwise);
 				PlaySound (m_soundManager.m_errorSound,0.5f);
 			}
 			else
@@ -176,6 +182,10 @@ public class GameController : MonoBehaviour {
 				}
 			}
 
+		}
+		else if (Input.GetButtonDown("ToggleRot"))
+		{
+			ToggleRotDirection();
 		}
 	}
 
@@ -245,6 +255,14 @@ public class GameController : MonoBehaviour {
 	{
 		if (m_soundManager.m_fxEnabled && clip) {
 			AudioSource.PlayClipAtPoint (clip, Camera.main.transform.position, Mathf.Clamp(m_soundManager.m_fxVolume*volMultiplier,0.05f,1f));
+		}
+	}
+	public void ToggleRotDirection()
+	{
+		m_clockwise = !m_clockwise;
+		if (m_rotIconToggle)
+		{
+			m_rotIconToggle.ToggleIcon(m_clockwise);
 		}
 	}
 }
