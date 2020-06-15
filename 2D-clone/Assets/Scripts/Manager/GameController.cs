@@ -67,6 +67,8 @@ public class GameController : MonoBehaviour {
 	// the panel that display when we Pause
 	public GameObject m_pausePanel;
 	Ghost m_ghost;
+	// our Shape holder
+	Holder m_holder;
 
 
 	// Use this for initialization
@@ -83,6 +85,8 @@ public class GameController : MonoBehaviour {
 		m_soundManager = GameObject.FindObjectOfType<SoundManager>();
 		m_scoreManager = GameObject.FindObjectOfType<ScoreManager>();
 		m_ghost = GameObject.FindObjectOfType<Ghost>();
+		m_holder = GameObject.FindObjectOfType<Holder>();
+
 
 		m_timeToNextKeyDown = Time.time + m_keyRepeatRateDown;
 		m_timeToNextKeyLeftRight = Time.time + m_keyRepeatRateLeftRight;
@@ -234,6 +238,10 @@ public class GameController : MonoBehaviour {
 		{
 			TogglePause();
 		}
+		else if (Input.GetButtonDown("Hold"))
+		{
+			Hold();
+		}
 	}
 
 	// shape lands
@@ -247,6 +255,11 @@ public class GameController : MonoBehaviour {
 		{
 			m_ghost.Reset();
 		}
+		if (m_holder)
+		{
+			m_holder.m_canRelease = true;
+		}
+
 		// spawn a new shape
 		m_activeShape = m_spawner.SpawnShape ();
 
@@ -344,5 +357,55 @@ public class GameController : MonoBehaviour {
 			Time.timeScale = (m_isPaused) ? 0 : 1;
 		}
 	}
+	public void Hold()
+	{
 
+		// if the holder is empty...
+		if (!m_holder.m_heldShape)
+		{
+			// catch the current active Shape
+			m_holder.Catch(m_activeShape);
+
+			// spawn a new Shape
+			m_activeShape = m_spawner.SpawnShape();
+
+			// play a sound
+			PlaySound(m_soundManager.m_holdSound);
+
+		} 
+		// if the holder is not empty and can release…
+		else if (m_holder.m_canRelease)
+		{
+			// set our active Shape to a temporary Shape
+			Shape shape = m_activeShape;
+
+			// release the currently heldShape 
+			m_activeShape = m_holder.Release();
+
+			// move the released Shape back to the spawner position
+			m_activeShape.transform.position = m_spawner.transform.position;
+
+			// catch the temporary Shape
+			m_holder.Catch(shape);
+
+			// play a sound 
+			PlaySound(m_soundManager.m_holdSound);
+
+		} 
+		// the holder is not empty but cannot release yet
+		else
+		{
+			//Debug.LogWarning("HOLDER WARNING:  Wait for cool down");
+
+			// play an error sound
+			PlaySound(m_soundManager.m_errorSound);
+
+		}
+		// reset the Ghost every time we tap the Hold button
+		if (m_ghost)
+		{
+			m_ghost.Reset();
+		}
+	}
 }
+

@@ -37,6 +37,7 @@ public class SoundManager : MonoBehaviour {
 
 	public AudioClip m_gameOverVocalClip;
 	public AudioClip m_levelUpVocalClip;
+	public AudioClip m_holdSound;
     AudioClip m_randomMusicClip;
 
 
