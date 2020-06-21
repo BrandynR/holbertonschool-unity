@@ -44,7 +44,8 @@ public class Spawner : MonoBehaviour {
 		// use the Queue
 		shape = GetQueuedShape();
 		shape.transform.position = transform.position;
-		shape.transform.localScale = Vector3.one;
+		StartCoroutine(GrowShape(shape, transform.position, 0.25f)); 
+		//shape.transform.localScale = Vector3.one;
 
 		if (shape)
 		{
@@ -109,5 +110,21 @@ public class Spawner : MonoBehaviour {
 		// returns either the first Shape (or null if the queue is empty)
 		return firstShape;
 	}
+	IEnumerator GrowShape(Shape shape, Vector3 position, float growTime = 0.5f)
+    {
+        float size = 0f;
+        growTime = Mathf.Clamp(growTime, 0.1f, 2f);
+        float sizeDelta = Time.deltaTime / growTime;
+
+        while (size < 1f)
+        {
+            shape.transform.localScale = new Vector3(size, size, size);
+            size += sizeDelta;
+            shape.transform.position = position;
+            yield return null;
+        }
+
+        shape.transform.localScale = Vector3.one;
+    }
 
 }
