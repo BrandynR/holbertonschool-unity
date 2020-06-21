@@ -269,7 +269,7 @@ public class GameController : MonoBehaviour {
 		m_timeToNextKeyRotate = Time.time;
 
 		// remove completed rows from the board if we have any 
-		m_gameBoard.ClearAllRows();
+		m_gameBoard.StartCoroutine("ClearAllRows");
 
 
 		PlaySound (m_soundManager.m_dropSound);
