@@ -247,52 +247,57 @@ public class GameController : MonoBehaviour {
 	// shape lands
 	void LandShape ()
 	{
-		// move the shape up, store it in the Board's grid array
-		m_activeShape.MoveUp ();
-		m_gameBoard.StoreShapeInGrid (m_activeShape);
-
-		if (m_ghost)
+		if (m_activeShape)
 		{
-			m_ghost.Reset();
-		}
-		if (m_holder)
-		{
-			m_holder.m_canRelease = true;
-		}
+			// move the shape up, store it in the Board's grid array
+			m_activeShape.MoveUp ();
+			m_gameBoard.StoreShapeInGrid (m_activeShape);
 
-		// spawn a new shape
-		m_activeShape = m_spawner.SpawnShape ();
+			m_activeShape.LandShapeFX();
 
-		// set all of the timeToNextKey variables to current time, so no input delay for the next spawned shape
-		m_timeToNextKeyLeftRight = Time.time;
-		m_timeToNextKeyDown = Time.time;
-		m_timeToNextKeyRotate = Time.time;
-
-		// remove completed rows from the board if we have any 
-		m_gameBoard.StartCoroutine("ClearAllRows");
-
-
-		PlaySound (m_soundManager.m_dropSound);
-
-		if (m_gameBoard.m_completedRows > 0)
-		{
-			m_scoreManager.ScoreLines(m_gameBoard.m_completedRows);
-
-			if (m_scoreManager.didLevelUp)
+			if (m_ghost)
 			{
-				m_dropIntervalModded = Mathf.Clamp(m_dropInterval - ((float)m_scoreManager.m_level * 0.05f), 0.05f, 1f);
-				PlaySound(m_soundManager.m_levelUpVocalClip);
+				m_ghost.Reset();
 			}
-			else
+			if (m_holder)
 			{
-				if (m_gameBoard.m_completedRows > 1)
+				m_holder.m_canRelease = true;
+			}
+
+			// spawn a new shape
+			m_activeShape = m_spawner.SpawnShape ();
+
+			// set all of the timeToNextKey variables to current time, so no input delay for the next spawned shape
+			m_timeToNextKeyLeftRight = Time.time;
+			m_timeToNextKeyDown = Time.time;
+			m_timeToNextKeyRotate = Time.time;
+
+			// remove completed rows from the board if we have any 
+			m_gameBoard.StartCoroutine("ClearAllRows");
+
+
+			PlaySound (m_soundManager.m_dropSound);
+
+			if (m_gameBoard.m_completedRows > 0)
+			{
+				m_scoreManager.ScoreLines(m_gameBoard.m_completedRows);
+
+				if (m_scoreManager.didLevelUp)
 				{
-					AudioClip randomVocal = m_soundManager.GetRandomClip(m_soundManager.m_vocalClips);
-					PlaySound(randomVocal);
+					m_dropIntervalModded = Mathf.Clamp(m_dropInterval - ((float)m_scoreManager.m_level * 0.05f), 0.05f, 1f);
+					PlaySound(m_soundManager.m_levelUpVocalClip);
 				}
-			}
+				else
+				{
+					if (m_gameBoard.m_completedRows > 1)
+					{
+						AudioClip randomVocal = m_soundManager.GetRandomClip(m_soundManager.m_vocalClips);
+						PlaySound(randomVocal);
+					}
+				}
 
-			PlaySound (m_soundManager.m_clearRowSound);
+				PlaySound (m_soundManager.m_clearRowSound);
+			}
 		}
 	}
 
