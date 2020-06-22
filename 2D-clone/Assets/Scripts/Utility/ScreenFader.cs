@@ -3,6 +3,8 @@ using UnityEngine.UI;
 using System.Collections;
 
 [RequireComponent(typeof(MaskableGraphic))]
+
+///<summary> Fades the screen in on start </summary>
 public class ScreenFader : MonoBehaviour {
 
 	// our starting alpha value

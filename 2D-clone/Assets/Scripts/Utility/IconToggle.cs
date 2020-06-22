@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 
 [RequireComponent(typeof(Image))]
+
+///<summary> Handles UI toggle buttons </summary>
 public class IconToggle : MonoBehaviour
 {
     public Sprite m_iconTrue;

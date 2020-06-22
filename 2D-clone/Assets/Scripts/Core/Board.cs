@@ -1,7 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-
+///<summary> Board class builds the game board grid, stores shapes,
+/// clears rows, and shifts completed rowes down
+///</summary>
 public class Board : MonoBehaviour
 {
 

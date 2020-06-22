@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+///<summary> Spawns random shapes into the game </summary>
 public class Spawner : MonoBehaviour {
 
 	// our library of shapes, make sure you don't leave any blanks in the Inspector

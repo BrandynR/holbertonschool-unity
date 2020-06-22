@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+///<summary> Handles the ability to stash a shape off the side </summary>
 public class Holder : MonoBehaviour 
 {
 	// Transform to attach our held Shape

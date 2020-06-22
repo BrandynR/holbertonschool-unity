@@ -2,6 +2,7 @@
 using UnityEngine.UI;
 using System.Collections;
 
+///<summary> Handles score </summary>
 public class ScoreManager : MonoBehaviour {
 	//our score
 	int m_score = 0;

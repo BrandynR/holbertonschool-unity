@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+///<summary> Shape handles moving/rotating the shapes in the game,
+/// as well as particle Fx on the blocks
+///</summary>
 public class Shape : MonoBehaviour {
 
 	// turn this property off if you don't want the shape to rotate (Shape O)

@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+///<summary> Ghost creates the ghost shape at the bottom of the game board </summary>
 public class Ghost : MonoBehaviour {
 	Shape m_ghostShape = null;
 	bool m_hitBottom = false;

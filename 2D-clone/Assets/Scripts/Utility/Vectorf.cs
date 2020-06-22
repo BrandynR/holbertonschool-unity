@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-// static class with helper functions for vectors
+///<summary> static class with helper functions for vectors </summary>
 public static class Vectorf
 {
 	// a static method for returning a rounded Vector2

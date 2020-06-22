@@ -2,6 +2,7 @@
 using System.Collections;
 using UnityEngine.SceneManagement;
 
+///<summary> Handles game controller inputs </summary>
 public class GameController : MonoBehaviour {
 
 	// reference to our board

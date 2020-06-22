@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+///<summary> Handles all sound effects and background music </summary>
 public class SoundManager : MonoBehaviour {
 
 	public bool m_musicEnabled = true;

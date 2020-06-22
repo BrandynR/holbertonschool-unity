@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+///<summary> Plays particle Fx </summary>
 public class ParticlePlayer : MonoBehaviour
 {
     public ParticleSystem[] allParticles;
