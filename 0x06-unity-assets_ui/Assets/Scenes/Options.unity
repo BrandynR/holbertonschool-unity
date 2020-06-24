@@ -1051,6 +1051,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6835d634bc15f42138bc5891f38490af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inverted: {fileID: 1814637927}
 --- !u!1 &1361687634
 GameObject:
   m_ObjectHideFlags: 0
@@ -2220,6 +2221,36 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ApplyButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 1265960100545276132, guid: b2f625f27a7cc47618728e12539091ff,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1265960100545276132, guid: b2f625f27a7cc47618728e12539091ff,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1265960100545276132, guid: b2f625f27a7cc47618728e12539091ff,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1265960100545276132, guid: b2f625f27a7cc47618728e12539091ff,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1353907560}
+    - target: {fileID: 1265960100545276132, guid: b2f625f27a7cc47618728e12539091ff,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Apply
+      objectReference: {fileID: 0}
+    - target: {fileID: 1265960100545276132, guid: b2f625f27a7cc47618728e12539091ff,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 1265960100545276133, guid: b2f625f27a7cc47618728e12539091ff,
         type: 3}
