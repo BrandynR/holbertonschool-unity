@@ -9,7 +9,7 @@ public class OptionsMenu : MonoBehaviour {
 
 	public void Back()
 	{
-		SceneManager.LoadScene("MainMenu");
+		SceneManager.LoadScene(backScene);
 	}
 
 	public void SetScene(int prevScene)

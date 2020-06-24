@@ -1242,6 +1242,36 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1353907559}
     m_Modifications:
+    - target: {fileID: 3824878307081646536, guid: 8705ff4d4cff44dd7a2f02bde8723373,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3824878307081646536, guid: 8705ff4d4cff44dd7a2f02bde8723373,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3824878307081646536, guid: 8705ff4d4cff44dd7a2f02bde8723373,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3824878307081646536, guid: 8705ff4d4cff44dd7a2f02bde8723373,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1353907561}
+    - target: {fileID: 3824878307081646536, guid: 8705ff4d4cff44dd7a2f02bde8723373,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ExitGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 3824878307081646536, guid: 8705ff4d4cff44dd7a2f02bde8723373,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 3824878307081646537, guid: 8705ff4d4cff44dd7a2f02bde8723373,
         type: 3}
       propertyPath: m_LocalPosition.x

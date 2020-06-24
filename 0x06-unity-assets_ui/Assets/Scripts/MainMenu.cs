@@ -12,13 +12,13 @@ public class MainMenu : MonoBehaviour {
 		optionsMenu.SetScene(level);
 		SceneManager.LoadScene(level);
 	}
-    
+
 	public void Options()
 	{
 		SceneManager.LoadScene(1);
 	}
 
-	public void QuitGame()
+	public void ExitGame()
 	{
 		Debug.Log("Exited");
 		Application.Quit();
