@@ -991,6 +991,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: PauseCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 4295701824156162438, guid: 7e6f720d9cd934d3eb91f8d5e8bfd30b,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 618978952}
+    - target: {fileID: 4295701824156162438, guid: 7e6f720d9cd934d3eb91f8d5e8bfd30b,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Resume
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7e6f720d9cd934d3eb91f8d5e8bfd30b, type: 3}
 --- !u!4 &209942894 stripped
@@ -2918,6 +2928,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 8530764224391155476}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &618978952 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 618978959, guid: 27913840ee6ac4bbda36b3301d74dbd0,
+    type: 3}
+  m_PrefabInstance: {fileID: 8530764224391155476}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 618978951}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9af611118318a42c8b814d917fc08ecf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &639850280 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400002, guid: 397a1bc3035a4b041af7833636a7bf9e,

@@ -28,6 +28,7 @@ public class OptionsMenu : MonoBehaviour
 {
     public Toggle inverted;
     int backScene;
+    public GameObject pauseCanvas;
 
     /*private void Start()
     {
@@ -38,6 +39,7 @@ public class OptionsMenu : MonoBehaviour
     public void Back()
     {
         SceneManager.LoadScene(PlayerPrefs.GetString("PreviousScene"));
+        pauseCanvas.SetActive(true);
     }
 
     public void Apply()
