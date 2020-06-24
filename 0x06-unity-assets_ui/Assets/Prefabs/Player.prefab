@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 1606933380854826986}
   - component: {fileID: 618978957}
   - component: {fileID: 618978952}
+  - component: {fileID: 618978958}
+  - component: {fileID: 618978959}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -124,6 +126,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b84b6d87c24934f87936aa172e6c2575, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
-  jumpSpeed: 8
+  speed: 5
+  jumpSpeed: 5
   gravity: 10
+--- !u!114 &618978958
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6243151479860335541}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b92a77fc12e5466695b1f1e64bdf12c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FinalText: {fileID: 0}
+  TimerText: {fileID: 0}
+--- !u!114 &618978959
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6243151479860335541}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9af611118318a42c8b814d917fc08ecf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pauseCanvas: {fileID: 0}

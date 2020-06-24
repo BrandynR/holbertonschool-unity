@@ -29,12 +29,12 @@ public class OptionsMenu : MonoBehaviour
     public Toggle inverted;
     int backScene;
 
-    private void Start()
+    /*private void Start()
     {
         if (PlayerPrefs.GetString("IsInverted") != "")
             if (bool.Parse(PlayerPrefs.GetString("IsInverted")) != inverted.isOn)
                 inverted.isOn = bool.Parse(PlayerPrefs.GetString("IsInverted"));
-    }
+    }*/
     public void Back()
     {
         SceneManager.LoadScene(PlayerPrefs.GetString("PreviousScene"));

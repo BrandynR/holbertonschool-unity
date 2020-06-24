@@ -6,6 +6,7 @@ using UnityEngine.UI;
 ///<summary>Timer counts up as player traverses the level</summary>
 public class Timer : MonoBehaviour
 {
+    public Text FinalText;
     public Text TimerText;
     private int min = 0;
     private float sec = 0.00f;
@@ -20,5 +21,11 @@ public class Timer : MonoBehaviour
         sec = (time % 60f);
         text = min.ToString() + ":" + sec.ToString("00.00");
         TimerText.text = text;
+        Win();
+        //FinalText.text = text;
+    }
+    public void Win()
+    {
+        FinalText.text = text;
     }
 }
