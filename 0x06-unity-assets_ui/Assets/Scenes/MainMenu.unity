@@ -534,6 +534,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6835d634bc15f42138bc5891f38490af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inverted: {fileID: 0}
+  pauseCanvas: {fileID: 0}
 --- !u!114 &1353907561
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -655,7 +657,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: dc9c2f3c0a86145ca830ddd6d069ea97, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3b93981cc76d948a58c2a258d027a3ac, type: 2}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -780,7 +782,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 15c206efa901e479f94cd7d21841e35a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2fde1d0d3b61b4b808a1f01b74f9410c, type: 2}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1063,7 +1065,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: deef183fdfe0d43b49aa4e530503c5aa, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f8a196e7b9455407693359f775745fa0, type: 2}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1221,6 +1223,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 2654927672683057445, guid: 8d4b5b79ee63544ef9d7e7fcfd0d3112,
+        type: 3}
+      propertyPath: m_Transition
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2654927672683057446, guid: 8d4b5b79ee63544ef9d7e7fcfd0d3112,
         type: 3}
