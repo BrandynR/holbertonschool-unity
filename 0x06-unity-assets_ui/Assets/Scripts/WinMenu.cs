@@ -17,7 +17,7 @@ public class WinMenu : MonoBehaviour
 
         if (y == 4)
         {
-            SceneManager.LoadScene(2);
+            SceneManager.LoadScene("MainMenu");
         }
         else
         {

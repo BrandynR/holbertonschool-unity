@@ -45,6 +45,7 @@ public class OptionsMenu : MonoBehaviour
     public void Apply()
     {
         PlayerPrefs.SetString("IsInverted", inverted.isOn.ToString());
+        Back();
     }
     public void SetScene(int prevScene)
 	{
