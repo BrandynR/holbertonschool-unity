@@ -1,7 +1,8 @@
+# 0x07-unity-animation
+Added new character model and animations.
+
 # 0x06. Unity - Assets: UI
 Updated Levels and gameplay
-
-
 
 # 0x05. Unity - Assets: Models, Textures
 
