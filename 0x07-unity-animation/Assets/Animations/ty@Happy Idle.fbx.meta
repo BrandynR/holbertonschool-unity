@@ -149,8 +149,18 @@ ModelImporter:
     rigImportErrors: 
     rigImportWarnings: 
     animationImportErrors: 
-    animationImportWarnings: 
-    animationRetargetingWarnings: 
+    animationImportWarnings: "\nClip 'mixamo.com' has import animation warnings that
+      might lower retargeting quality:\nNote: Activate translation DOF on avatar to
+      improve retargeting quality.\n\t'Boy:Spine1' is inbetween humanoid transforms
+      and has rotation animation that will be discarded.\n"
+    animationRetargetingWarnings: "\nRetargeting quality report for clip 'mixamo.com':\n\tLeftUpperArm
+      average position error 8.1 mm and maximum position error 8.6 mm at time 0:27
+      (38.6%) Frame 27\n\tLeftLowerArm average position error 4.2 mm and maximum position
+      error 4.5 mm at time 0:26 (37.1%) Frame 26\n\tRightUpperArm average position
+      error 8.1 mm and maximum position error 8.6 mm at time 0:27 (38.6%) Frame 27\n\tRightLowerArm
+      average position error 4.3 mm and maximum position error 4.5 mm at time 0:27
+      (38.6%) Frame 27\n\tHead average position error 8.1 mm and maximum position
+      error 8.6 mm at time 0:27 (38.6%) Frame 27\n"
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
     importConstraints: 0
