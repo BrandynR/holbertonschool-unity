@@ -1646,8 +1646,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 618978951}
-  turnSpeed: 5
-  isInverted: 0
+  playerPos: {fileID: 1957091351}
+  offset: {x: 0, y: 2.5, z: -6.25}
+  rotateAround: 1
+  rotationSpeed: 5
+  LookAtPlayer: 0
 --- !u!45 &534669907
 Skybox:
   m_ObjectHideFlags: 0
@@ -7180,6 +7183,12 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300000, guid: 0779e5d1277806848b714d6a6f32c6c6, type: 3}
+--- !u!4 &1957091351 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7563144841848187539, guid: 27913840ee6ac4bbda36b3301d74dbd0,
+    type: 3}
+  m_PrefabInstance: {fileID: 8530764224391155476}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1971353452
 PrefabInstance:
   m_ObjectHideFlags: 0
