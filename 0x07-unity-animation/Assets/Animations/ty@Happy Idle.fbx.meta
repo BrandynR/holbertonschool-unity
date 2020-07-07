@@ -153,14 +153,7 @@ ModelImporter:
       might lower retargeting quality:\nNote: Activate translation DOF on avatar to
       improve retargeting quality.\n\t'Boy:Spine1' is inbetween humanoid transforms
       and has rotation animation that will be discarded.\n"
-    animationRetargetingWarnings: "\nRetargeting quality report for clip 'mixamo.com':\n\tLeftUpperArm
-      average position error 8.1 mm and maximum position error 8.6 mm at time 0:27
-      (38.6%) Frame 27\n\tLeftLowerArm average position error 4.2 mm and maximum position
-      error 4.5 mm at time 0:26 (37.1%) Frame 26\n\tRightUpperArm average position
-      error 8.1 mm and maximum position error 8.6 mm at time 0:27 (38.6%) Frame 27\n\tRightLowerArm
-      average position error 4.3 mm and maximum position error 4.5 mm at time 0:27
-      (38.6%) Frame 27\n\tHead average position error 8.1 mm and maximum position
-      error 8.6 mm at time 0:27 (38.6%) Frame 27\n"
+    animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
     importConstraints: 0
@@ -235,7 +228,7 @@ ModelImporter:
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
   importAnimation: 1
-  copyAvatar: 1
+  copyAvatar: 0
   humanDescription:
     serializedVersion: 2
     human:
@@ -1019,8 +1012,7 @@ ModelImporter:
     hasTranslationDoF: 0
     hasExtraRoot: 1
     skeletonHasParents: 1
-  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: 18b0a9aa67e00484f9b8b088175b6752,
-    type: 3}
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
   animationType: 3
   humanoidOversampling: 1
   additionalBone: 0
