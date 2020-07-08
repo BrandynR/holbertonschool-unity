@@ -122,7 +122,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6243151479860335541}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b84b6d87c24934f87936aa172e6c2575, type: 3}
   m_Name: 
@@ -130,6 +130,8 @@ MonoBehaviour:
   speed: 5
   jumpSpeed: 5
   gravity: 10
+  turnSmoothTime: 0.1
+  anim: {fileID: 8573862762947680588}
 --- !u!114 &618978958
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -166,7 +168,7 @@ Animator:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7563144841848682163}
   m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 0eb226095238541d8b4dec50444d0811, type: 3}
+  m_Avatar: {fileID: 9000000, guid: 18b0a9aa67e00484f9b8b088175b6752, type: 3}
   m_Controller: {fileID: 9100000, guid: c326bfb59ffc74ce7b71a1c57ab1ab8f, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
