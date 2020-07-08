@@ -18,12 +18,15 @@ public class PlayerController : MonoBehaviour
 
     private Vector3 moveDirection = Vector3.zero;
     private bool isCoroutine = true;
-    Animator anim;
+    public float turnSmoothTime = 0.1f;
+    float turnSmoothVelocity;
+
+    //Animator anim;
 
     void Start()
     {
         characterController = GetComponent<CharacterController>();
-        anim = GetComponent<Animator>();
+        //anim = GetComponent<Animator>();
     }
 
     void Update()
@@ -40,6 +43,15 @@ public class PlayerController : MonoBehaviour
             {
                 moveDirection.y = jumpSpeed;
             }
+
+            if (moveDirection.magnitude >= 0.1f)
+            {
+                float targetAngle = Mathf.Atan2(moveDirection.x, moveDirection.z) * Mathf.Rad2Deg;
+                float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime);
+                transform.rotation = Quaternion.Euler(0f, angle, 0f);
+            
+                characterController.Move(moveDirection * speed * Time.deltaTime);
+            }
         }
 
         // Apply gravity. Gravity is multiplied by deltaTime twice (once here, and once below
@@ -52,8 +64,12 @@ public class PlayerController : MonoBehaviour
     }
     void OnTriggerEnter(Collider other)
     {
-        //if (other.CompareTag("Falling"))
-          //  anim.SetTrigger("isFalling");
+        /*if (other.CompareTag("Falling"))
+            {
+                anim.SetTrigger("isFalling");
+                Debug.Log("Falling");
+            }*/
+
         
         if (other.CompareTag("Respawn"))
             StartCoroutine(LoadScene(1f));

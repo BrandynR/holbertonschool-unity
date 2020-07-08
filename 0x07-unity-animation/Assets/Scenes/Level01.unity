@@ -1394,7 +1394,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 452987632}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -1440,8 +1440,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 452987632}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.06, y: -3.72, z: 19.2}
-  m_LocalScale: {x: 6.8746815, y: 1, z: 7.6953793}
+  m_LocalPosition: {x: -1.06, y: -9.14, z: 19.2}
+  m_LocalScale: {x: 6.8746815, y: 14, z: 7.6953793}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 16
@@ -2730,6 +2730,12 @@ Transform:
 --- !u!1 &618978951 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6243151479860335541, guid: 27913840ee6ac4bbda36b3301d74dbd0,
+    type: 3}
+  m_PrefabInstance: {fileID: 8530764224391155476}
+  m_PrefabAsset: {fileID: 0}
+--- !u!143 &618978954 stripped
+CharacterController:
+  m_CorrespondingSourceObject: {fileID: 618978957, guid: 27913840ee6ac4bbda36b3301d74dbd0,
     type: 3}
   m_PrefabInstance: {fileID: 8530764224391155476}
   m_PrefabAsset: {fileID: 0}
@@ -8379,6 +8385,18 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 618978952, guid: 27913840ee6ac4bbda36b3301d74dbd0, type: 3}
+      propertyPath: camera
+      value: 
+      objectReference: {fileID: 534669905}
+    - target: {fileID: 618978952, guid: 27913840ee6ac4bbda36b3301d74dbd0, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 618978954}
+    - target: {fileID: 618978952, guid: 27913840ee6ac4bbda36b3301d74dbd0, type: 3}
+      propertyPath: jumpH
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 618978958, guid: 27913840ee6ac4bbda36b3301d74dbd0, type: 3}
       propertyPath: FinalText
       value: 
@@ -8476,6 +8494,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8573862762947680588, guid: 27913840ee6ac4bbda36b3301d74dbd0,
+        type: 3}
+      propertyPath: m_Avatar
+      value: 
+      objectReference: {fileID: 9000000, guid: 18b0a9aa67e00484f9b8b088175b6752, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 27913840ee6ac4bbda36b3301d74dbd0, type: 3}
 --- !u!1001 &8798666280757342215

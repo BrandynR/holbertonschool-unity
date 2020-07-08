@@ -29,9 +29,14 @@ public class CharacterAnim : MonoBehaviour
             anim.SetTrigger("Jump");
         }
 
-        /*if (PlayerController.isFalling == 1)
+        /*if (playerPos.position.y >= -5)
         {
             anim.SetTrigger("isFalling");
         }*/
     }
+    /*void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Falling"))
+        anim.SetBool("isFalling", true);
+    }*/
 }
