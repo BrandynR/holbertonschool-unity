@@ -18,10 +18,12 @@ public class PlayerController : MonoBehaviour
 
     private Vector3 moveDirection = Vector3.zero;
     private bool isCoroutine = true;
+    Animator anim;
 
     void Start()
     {
         characterController = GetComponent<CharacterController>();
+        anim = GetComponent<Animator>();
     }
 
     void Update()
@@ -50,6 +52,9 @@ public class PlayerController : MonoBehaviour
     }
     void OnTriggerEnter(Collider other)
     {
+        //if (other.CompareTag("Falling"))
+          //  anim.SetTrigger("isFalling");
+        
         if (other.CompareTag("Respawn"))
             StartCoroutine(LoadScene(1f));
     }
