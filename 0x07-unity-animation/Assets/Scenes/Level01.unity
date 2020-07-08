@@ -8382,6 +8382,18 @@ PrefabInstance:
       propertyPath: anim
       value: 
       objectReference: {fileID: 1483285828}
+    - target: {fileID: 618978952, guid: 27913840ee6ac4bbda36b3301d74dbd0, type: 3}
+      propertyPath: gravity
+      value: 7.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 618978952, guid: 27913840ee6ac4bbda36b3301d74dbd0, type: 3}
+      propertyPath: speed
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 618978952, guid: 27913840ee6ac4bbda36b3301d74dbd0, type: 3}
+      propertyPath: turnSmoothTime
+      value: 0.01
+      objectReference: {fileID: 0}
     - target: {fileID: 618978958, guid: 27913840ee6ac4bbda36b3301d74dbd0, type: 3}
       propertyPath: FinalText
       value: 
