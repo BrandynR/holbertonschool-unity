@@ -21,7 +21,7 @@ public class PlayerController : MonoBehaviour
     public float turnSmoothTime = 0.1f;
     float turnSmoothVelocity;
 
-    //Animator anim;
+    public Animator anim;
 
     void Start()
     {
@@ -41,17 +41,21 @@ public class PlayerController : MonoBehaviour
 
             if (Input.GetButton("Jump"))
             {
+                anim.SetTrigger("Jump");
                 moveDirection.y = jumpSpeed;
             }
 
             if (moveDirection.magnitude >= 0.1f)
             {
+                anim.SetBool("isRunning", true);
                 float targetAngle = Mathf.Atan2(moveDirection.x, moveDirection.z) * Mathf.Rad2Deg;
                 float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime);
                 transform.rotation = Quaternion.Euler(0f, angle, 0f);
             
                 characterController.Move(moveDirection * speed * Time.deltaTime);
             }
+            else
+                anim.SetBool("isRunning", false);
         }
 
         // Apply gravity. Gravity is multiplied by deltaTime twice (once here, and once below
@@ -64,11 +68,11 @@ public class PlayerController : MonoBehaviour
     }
     void OnTriggerEnter(Collider other)
     {
-        /*if (other.CompareTag("Falling"))
+        if (other.CompareTag("Falling"))
             {
                 anim.SetTrigger("isFalling");
                 Debug.Log("Falling");
-            }*/
+            }
 
         
         if (other.CompareTag("Respawn"))
