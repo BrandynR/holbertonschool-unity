@@ -22,10 +22,16 @@ public class PlayerController : MonoBehaviour
     float turnSmoothVelocity;
 
     public Animator anim;
-
+    public Transform playerTransform;
+    public Transform spawnPoint;
+    public Transform startingPoint;
+    public float fallThreshold = -3f;
+    public float respawnThreshold = -20f;
+    
     void Start()
     {
         characterController = GetComponent<CharacterController>();
+        playerTransform = GameObject.Find("Player").transform;
         //anim = GetComponent<Animator>();
     }
 
@@ -48,6 +54,7 @@ public class PlayerController : MonoBehaviour
             if (moveDirection.magnitude >= 0.1f)
             {
                 anim.SetBool("isRunning", true);
+                
                 float targetAngle = Mathf.Atan2(moveDirection.x, moveDirection.z) * Mathf.Rad2Deg;
                 float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime);
                 transform.rotation = Quaternion.Euler(0f, angle, 0f);
@@ -68,16 +75,62 @@ public class PlayerController : MonoBehaviour
     }
     void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Falling"))
-            {
-                anim.SetTrigger("isFalling");
-                Debug.Log("Falling");
-            }
+        //if (other.CompareTag("Falling"))
+          //  {
+            //    anim.SetTrigger("isFalling");
+              //  Debug.Log("Falling");
+            //}
+        if (other.CompareTag("Flat"))
+        {
+            anim.SetBool("Grounded", true);
+            transform.position = startingPoint.position;
+        }
 
         
-        if (other.CompareTag("Respawn"))
-            StartCoroutine(LoadScene(1f));
+        //if (other.CompareTag("Respawn"))
+            //SpawnPlayer();
+            //StartCoroutine(LoadScene(1f));
+            //SpawnPlayer();
+            
+
+            //StartCoroutine(LoadScene(1f));
+            //anim.SetTrigger("fallingFlat");
     }
+
+     void FixedUpdate ()
+     {
+         if (transform.position.y < fallThreshold)
+         {
+             //anim.SetTrigger("isFalling");
+             anim.SetBool("Falling", true);
+             anim.SetBool("Grounded", false);
+         }
+         if (transform.position.y < respawnThreshold)
+         {
+             //transform.position = new Vector3(0, 25, 0);
+             //SpawnPlayer();
+             //StartCoroutine(LoadScene(1f));
+             transform.position = spawnPoint.position;
+             
+             anim.SetBool("Falling", false);
+             
+             //anim.SetBool("Grounded", true);
+         }
+     }
+
+     /*private void OnCollisionEnter(Collision other)
+    {
+        anim.SetBool("Falling", false);
+        anim.SetBool("Grounded", true);
+    }*/
+
+    void SpawnPlayer()
+    {
+        transform.position = new Vector3 (0, 25, 0);
+        Debug.Log(transform.position);
+        //anim.SetTrigger("fallingFlat");
+    }
+
     IEnumerator LoadScene(float seconds)
     {
         isCoroutine = false;

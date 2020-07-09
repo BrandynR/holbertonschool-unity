@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Falling
+  - Flat
   layers:
   - Default
   - TransparentFX

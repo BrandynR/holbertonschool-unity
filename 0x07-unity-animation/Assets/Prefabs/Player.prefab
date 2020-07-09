@@ -127,11 +127,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b84b6d87c24934f87936aa172e6c2575, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 3
   jumpSpeed: 5
-  gravity: 10
-  turnSmoothTime: 0.1
+  gravity: 7.5
+  turnSmoothTime: 0.01
   anim: {fileID: 8573862762947680588}
+  playerTransform: {fileID: 6319182287012848531}
+  spawnPoint: {fileID: 0}
+  fallThreshold: -3
+  respawnThreshold: -20
 --- !u!114 &618978958
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -158,7 +162,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9af611118318a42c8b814d917fc08ecf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pauseCanvas: {fileID: 0}
+  pauseCanvas: {fileID: 617185524022373350, guid: 7e6f720d9cd934d3eb91f8d5e8bfd30b,
+    type: 3}
 --- !u!95 &8573862762947680588
 Animator:
   serializedVersion: 3
@@ -195,7 +200,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400142, guid: 18b0a9aa67e00484f9b8b088175b6752, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.15
+      value: -1.1
       objectReference: {fileID: 0}
     - target: {fileID: 400142, guid: 18b0a9aa67e00484f9b8b088175b6752, type: 3}
       propertyPath: m_LocalPosition.z
