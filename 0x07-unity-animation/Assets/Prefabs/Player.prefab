@@ -122,7 +122,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6243151479860335541}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b84b6d87c24934f87936aa172e6c2575, type: 3}
   m_Name: 
@@ -134,6 +134,7 @@ MonoBehaviour:
   anim: {fileID: 8573862762947680588}
   playerTransform: {fileID: 6319182287012848531}
   spawnPoint: {fileID: 0}
+  startingPoint: {fileID: 0}
   fallThreshold: -3
   respawnThreshold: -20
 --- !u!114 &618978958

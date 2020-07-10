@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 8348033362312553902}
   - component: {fileID: 831197838}
   - component: {fileID: 45950891043416842}
-  - component: {fileID: 831197839}
   m_Layer: 0
   m_Name: CutsceneCamera
   m_TagString: Untagged
@@ -123,15 +122,6 @@ MonoBehaviour:
     type: 3}
   cutCamera: {fileID: 8932639736926203}
 --- !u!45 &45950891043416842
-Skybox:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8932639736926203}
-  m_Enabled: 1
-  m_CustomSkybox: {fileID: 2100000, guid: 617d9be015db68348a623b01ea51a8c5, type: 2}
---- !u!45 &831197839
 Skybox:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
