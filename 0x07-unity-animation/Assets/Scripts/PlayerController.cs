@@ -27,6 +27,8 @@ public class PlayerController : MonoBehaviour
     public Transform startingPoint;
     public float fallThreshold = -3f;
     public float respawnThreshold = -20f;
+
+    bool grounded = false;
     
     void Start()
     {
@@ -73,6 +75,26 @@ public class PlayerController : MonoBehaviour
         // Move the controller
         characterController.Move(moveDirection * Time.deltaTime);
     }
+    void FixedUpdate ()
+    {
+        if (transform.position.y < fallThreshold)
+        {
+            //anim.SetTrigger("isFalling");
+            anim.SetBool("Falling", true);
+            anim.SetBool("Grounded", false);
+        }
+        if (transform.position.y < respawnThreshold)
+        {
+            //transform.position = new Vector3(0, 25, 0);
+            //SpawnPlayer();
+            //StartCoroutine(LoadScene(1f));
+            transform.position = spawnPoint.position;
+             
+            anim.SetBool("Falling", false);
+            Debug.Log("Falling no more");
+            //anim.SetBool("Grounded", true);
+        }
+    }
     void OnTriggerEnter(Collider other)
     {
         //if (other.CompareTag("Falling"))
@@ -82,9 +104,32 @@ public class PlayerController : MonoBehaviour
             //}
         if (other.CompareTag("Flat"))
         {
+            transform.position = playerTransform.position;
+
             anim.SetBool("Grounded", true);
-            transform.position = startingPoint.position;
+            grounded = true;
+            Debug.Log("SPLAT!!!");
+
+            if (grounded == true)
+            {
+                anim.SetBool("backToIdle", true);
+                anim.SetBool("Grounded", false);
+                
+                Debug.Log("BackToIdle");
+                //transform.position = new Vector3 (0, -1, 0);   
+            }
         }
+        if (other.CompareTag("Transform"))
+        {
+            transform.position = startingPoint.position;
+            Debug.Log("Transform");
+        }
+        
+            //anim.SetBool("Grounded", false);
+            //anim.SetBool("backToIdle", true);
+            //transform.position = new Vector3 (0, -1, 0);
+            //transform.position = startingPoint.position;
+        
 
         
         //if (other.CompareTag("Respawn"))
@@ -96,27 +141,8 @@ public class PlayerController : MonoBehaviour
             //StartCoroutine(LoadScene(1f));
             //anim.SetTrigger("fallingFlat");
     }
-
-     void FixedUpdate ()
-     {
-         if (transform.position.y < fallThreshold)
-         {
-             //anim.SetTrigger("isFalling");
-             anim.SetBool("Falling", true);
-             anim.SetBool("Grounded", false);
-         }
-         if (transform.position.y < respawnThreshold)
-         {
-             //transform.position = new Vector3(0, 25, 0);
-             //SpawnPlayer();
-             //StartCoroutine(LoadScene(1f));
-             transform.position = spawnPoint.position;
-             
-             anim.SetBool("Falling", false);
-             
-             //anim.SetBool("Grounded", true);
-         }
-     }
+    
+    
 
      /*private void OnCollisionEnter(Collision other)
     {
@@ -139,3 +165,4 @@ public class PlayerController : MonoBehaviour
         isCoroutine = true;
     }
 }
+

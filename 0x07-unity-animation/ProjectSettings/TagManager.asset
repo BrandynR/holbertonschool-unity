@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Falling
   - Flat
+  - Transform
   layers:
   - Default
   - TransparentFX
