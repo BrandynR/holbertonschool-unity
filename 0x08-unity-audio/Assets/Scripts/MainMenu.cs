@@ -6,6 +6,9 @@ using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour {
 
 	public OptionsMenu optionsMenu;
+	public AudioSource buttonRollover;
+	public AudioSource buttonClick;
+	public AudioClip rollOver;
 
 	public void LevelSelect(int level)
 	{
@@ -22,5 +25,13 @@ public class MainMenu : MonoBehaviour {
 	{
 		Debug.Log("Exited");
 		Application.Quit();
+	}
+	public void HoverAudio()
+	{
+		buttonRollover.Play();
+	}
+	public void ButtonClick()
+	{
+		buttonClick.Play();
 	}
 }
