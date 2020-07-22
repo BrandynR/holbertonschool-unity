@@ -922,7 +922,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1.879528
-  MaxDistance: 500
+  MaxDistance: 2.685772
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -2607,7 +2607,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1.1173153
-  MaxDistance: 200
+  MaxDistance: 1.9670334
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -9365,6 +9365,16 @@ PrefabInstance:
       propertyPath: pauseCanvas
       value: 
       objectReference: {fileID: 1184957029}
+    - target: {fileID: 618978959, guid: 27913840ee6ac4bbda36b3301d74dbd0, type: 3}
+      propertyPath: pauseAudio
+      value: 
+      objectReference: {fileID: 245493645978745510, guid: ff498adb641aa402c84cabe9589db243,
+        type: 2}
+    - target: {fileID: 618978959, guid: 27913840ee6ac4bbda36b3301d74dbd0, type: 3}
+      propertyPath: unpauseAudio
+      value: 
+      objectReference: {fileID: 245709788893032494, guid: ff498adb641aa402c84cabe9589db243,
+        type: 2}
     - target: {fileID: 1606933380854826986, guid: 27913840ee6ac4bbda36b3301d74dbd0,
         type: 3}
       propertyPath: m_Enabled
