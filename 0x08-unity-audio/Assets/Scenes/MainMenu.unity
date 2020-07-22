@@ -1243,7 +1243,7 @@ GameObject:
   - component: {fileID: 1847200669}
   - component: {fileID: 1847200668}
   m_Layer: 0
-  m_Name: BGM
+  m_Name: Wallpaper
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
