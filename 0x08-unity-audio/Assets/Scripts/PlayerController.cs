@@ -54,11 +54,18 @@ public class PlayerController : MonoBehaviour
                 anim.SetTrigger("Jump");
                 moveDirection.y = jumpSpeed;
             }
-
-            if (moveDirection.magnitude >= 0.01f || Input.GetButton("Horizontal") || Input.GetButton("Vertical"))
+            if (Input.GetButton("Horizontal") || Input.GetButton("Vertical"))
             {
                 anim.SetBool("isRunning", true);
-                //footsteps.Play();
+            }
+            else
+            {
+                anim.SetBool("isRunning", false);
+            }
+
+            if (moveDirection.magnitude >= 0.01f)
+            {
+                //anim.SetBool("isRunning", true);
                 
                 float targetAngle = Mathf.Atan2(moveDirection.x, moveDirection.z) * Mathf.Rad2Deg;
                 float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime);
@@ -68,7 +75,7 @@ public class PlayerController : MonoBehaviour
             }
             else
                 anim.SetBool("isRunning", false);
-                //footsteps.Stop();
+                footsteps.Stop();
         }
 
         // Apply gravity. Gravity is multiplied by deltaTime twice (once here, and once below
@@ -170,9 +177,15 @@ public class PlayerController : MonoBehaviour
     }
     void PlaySound ()
     {
-        if (Input.GetButton("Vertical") || Input.GetButton("Horizontal") )
+        if (Input.GetButton("Vertical") || Input.GetButton("Horizontal"))
         {
             footsteps.Play();
+            //anim.SetBool("isRunning", true);
+        }
+        else
+        {
+            footsteps.Stop();
+            //anim.SetBool("isRunning", false);
         }
      }
     

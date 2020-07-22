@@ -133,10 +133,13 @@ MonoBehaviour:
   turnSmoothTime: 0.01
   anim: {fileID: 8573862762947680588}
   playerTransform: {fileID: 6319182287012848531}
-  spawnPoint: {fileID: 0}
-  startingPoint: {fileID: 0}
+  spawnPoint: {fileID: 1191565886516283626, guid: 2d978cd480b3540beb2bbe84bd9cdf85,
+    type: 3}
+  startingPoint: {fileID: 1022935098916791823, guid: 2bf321af993df418a9429e8ad1f0d6ff,
+    type: 3}
   fallThreshold: -3
   respawnThreshold: -20
+  footsteps: {fileID: 0}
 --- !u!114 &618978958
 MonoBehaviour:
   m_ObjectHideFlags: 0
