@@ -10,6 +10,7 @@ public class WinTrigger : MonoBehaviour
     public GameObject winCanvas;
     public GameObject Timer;
     public AudioSource backgroundMusic;
+    public AudioSource winMusic;
 
     void OnTriggerEnter(Collider change) 
     {
@@ -17,6 +18,7 @@ public class WinTrigger : MonoBehaviour
         {
             change.gameObject.GetComponent<Timer>().enabled = false;
             backgroundMusic.Stop();
+            winMusic.Play();
             Timer.SetActive(false);
             winCanvas.SetActive(true);
         
