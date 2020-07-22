@@ -27,6 +27,7 @@ public class PlayerController : MonoBehaviour
     public Transform startingPoint;
     public float fallThreshold = -3f;
     public float respawnThreshold = -20f;
+    public AudioSource footsteps;
 
     bool grounded = false;
     
@@ -35,6 +36,7 @@ public class PlayerController : MonoBehaviour
         characterController = GetComponent<CharacterController>();
         playerTransform = GameObject.Find("Player").transform;
         //anim = GetComponent<Animator>();
+        InvokeRepeating ("PlaySound", 0.0f, 0.5f);
     }
 
     void Update()
@@ -53,9 +55,10 @@ public class PlayerController : MonoBehaviour
                 moveDirection.y = jumpSpeed;
             }
 
-            if (moveDirection.magnitude >= 0.01f)
+            if (moveDirection.magnitude >= 0.01f || Input.GetButton("Horizontal") || Input.GetButton("Vertical"))
             {
                 anim.SetBool("isRunning", true);
+                //footsteps.Play();
                 
                 float targetAngle = Mathf.Atan2(moveDirection.x, moveDirection.z) * Mathf.Rad2Deg;
                 float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime);
@@ -65,6 +68,7 @@ public class PlayerController : MonoBehaviour
             }
             else
                 anim.SetBool("isRunning", false);
+                //footsteps.Stop();
         }
 
         // Apply gravity. Gravity is multiplied by deltaTime twice (once here, and once below
@@ -164,5 +168,13 @@ public class PlayerController : MonoBehaviour
         SceneManager.LoadScene("Level01");
         isCoroutine = true;
     }
+    void PlaySound ()
+    {
+        if (Input.GetButton("Vertical") || Input.GetButton("Horizontal") )
+        {
+            footsteps.Play();
+        }
+     }
+    
 }
 
