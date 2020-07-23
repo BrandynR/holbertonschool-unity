@@ -9,7 +9,8 @@ public class OptionsMenu : MonoBehaviour
     public Toggle inverted;
     int backScene;
     public GameObject pauseCanvas;
-
+    public AudioSource buttonRollover;
+	public AudioSource buttonClick;
 
     public void Back()
     {
@@ -25,5 +26,13 @@ public class OptionsMenu : MonoBehaviour
     public void SetScene(int prevScene)
 	{
 		backScene = prevScene;
+	}
+    public void HoverAudio()
+	{
+		buttonRollover.Play();
+	}
+	public void ButtonClick()
+	{
+		buttonClick.Play();
 	}
 }

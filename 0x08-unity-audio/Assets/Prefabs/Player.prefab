@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 618978952}
   - component: {fileID: 618978958}
   - component: {fileID: 618978959}
+  - component: {fileID: 4728134109442022625}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -168,6 +169,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pauseCanvas: {fileID: 617185524022373350, guid: 7e6f720d9cd934d3eb91f8d5e8bfd30b,
     type: 3}
+  pauseAudio: {fileID: 0}
+  unpauseAudio: {fileID: 0}
+--- !u!81 &4728134109442022625
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6243151479860335541}
+  m_Enabled: 1
 --- !u!95 &8573862762947680588
 Animator:
   serializedVersion: 3

@@ -107,7 +107,6 @@ AudioMixerGroupController:
   m_Pitch: c83e37093e7724615a33b2f75e01c892
   m_Effects:
   - {fileID: 244276402562771260}
-  - {fileID: 244332034431699530}
   m_UserColorIndex: 0
   m_Mute: 0
   m_Solo: 0
@@ -155,24 +154,6 @@ AudioMixerEffectController:
   m_EffectName: Attenuation
   m_MixLevel: 4df2409742fd34d1fbccd80471bbaac4
   m_Parameters: []
-  m_SendTarget: {fileID: 0}
-  m_EnableWetMix: 0
-  m_Bypass: 0
---- !u!244 &244332034431699530
-AudioMixerEffectController:
-  m_ObjectHideFlags: 3
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 
-  m_EffectID: 61f527cec21cf4038bbebd907a9a0ab2
-  m_EffectName: Lowpass
-  m_MixLevel: 69895bb4347ca41d89472fa74f77a4e7
-  m_Parameters:
-  - m_ParameterName: Cutoff freq
-    m_GUID: 4753ddb386c2046a3ab50376009a5fd0
-  - m_ParameterName: Resonance
-    m_GUID: a8792558514f24c06bfc05c6af5b07b8
   m_SendTarget: {fileID: 0}
   m_EnableWetMix: 0
   m_Bypass: 0

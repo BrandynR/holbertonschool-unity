@@ -8,7 +8,6 @@ public class MainMenu : MonoBehaviour {
 	public OptionsMenu optionsMenu;
 	public AudioSource buttonRollover;
 	public AudioSource buttonClick;
-	public AudioClip rollOver;
 
 	public void LevelSelect(int level)
 	{
