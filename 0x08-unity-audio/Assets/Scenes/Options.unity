@@ -1217,6 +1217,7 @@ MonoBehaviour:
     type: 3}
   buttonRollover: {fileID: 2146657084}
   buttonClick: {fileID: 1503811708}
+  mixer: {fileID: 24100000, guid: ff498adb641aa402c84cabe9589db243, type: 2}
 --- !u!1 &1361687634
 GameObject:
   m_ObjectHideFlags: 0
@@ -1726,7 +1727,18 @@ MonoBehaviour:
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1353907560}
+        m_MethodName: Apply
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1701557394
 GameObject:
   m_ObjectHideFlags: 0
@@ -2380,7 +2392,18 @@ MonoBehaviour:
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1353907560}
+        m_MethodName: Apply
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!82 &2146657084 stripped
 AudioSource:
   m_CorrespondingSourceObject: {fileID: 4862255640946826792, guid: 86aae88af0ce543d0ae787b32e0b14ad,
