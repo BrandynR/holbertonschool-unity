@@ -48,10 +48,12 @@ public class OptionsMenu : MonoBehaviour
             this.GetComponentInChildren<Toggle>().isOn = PlayerPrefs.GetInt("InvertY") == 0 ? false : true;
         else
             this.GetComponentInChildren<Toggle>().isOn = false;
+
         if (PlayerPrefs.HasKey("BGMVol"))
             GameObject.Find("BGMSlider").GetComponent<Slider>().value = PlayerPrefs.GetFloat("BGMVol");
         else
             GameObject.Find("BGMSlider").GetComponent<Slider>().value = 1;
+            
         if (PlayerPrefs.HasKey("SFXVol"))
             GameObject.Find("SFXSlider").GetComponent<Slider>().value = PlayerPrefs.GetFloat("SFXVol");
         else

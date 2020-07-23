@@ -28,6 +28,7 @@ public class PlayerController : MonoBehaviour
     public float fallThreshold = -3f;
     public float respawnThreshold = -20f;
     public AudioSource footsteps;
+    public AudioSource impact;
 
     bool grounded = false;
     
@@ -118,7 +119,9 @@ public class PlayerController : MonoBehaviour
             transform.position = playerTransform.position;
 
             anim.SetBool("Grounded", true);
-            grounded = true;
+            anim.SetTrigger("getUp");
+            //grounded = true;
+            impact.Play();
             Debug.Log("SPLAT!!!");
 
             if (grounded == true)

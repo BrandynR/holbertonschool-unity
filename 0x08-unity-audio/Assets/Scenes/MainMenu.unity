@@ -542,6 +542,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inverted: {fileID: 0}
   pauseCanvas: {fileID: 0}
+  buttonRollover: {fileID: 0}
+  buttonClick: {fileID: 0}
+  mixer: {fileID: 0}
 --- !u!114 &1353907561
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -557,7 +560,6 @@ MonoBehaviour:
   optionsMenu: {fileID: 1353907560}
   buttonRollover: {fileID: 342442552}
   buttonClick: {fileID: 1387848876}
-  rollOver: {fileID: 8300000, guid: 84c669f8c77f24ebb87b8e8f1c7399ca, type: 3}
 --- !u!82 &1387848876 stripped
 AudioSource:
   m_CorrespondingSourceObject: {fileID: 4862255639828101308, guid: 86aae88af0ce543d0ae787b32e0b14ad,
@@ -1264,7 +1266,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
