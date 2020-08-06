@@ -133,6 +133,7 @@ GameObject:
   - component: {fileID: 68787750}
   - component: {fileID: 68787749}
   - component: {fileID: 68787748}
+  - component: {fileID: 68787752}
   m_Layer: 0
   m_Name: Email
   m_TagString: Untagged
@@ -148,7 +149,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 68787746}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: -0.13, y: 0, z: 0.015}
+  m_LocalPosition: {x: -0.16, y: 0.001, z: 0.054}
   m_LocalScale: {x: 0.007403615, y: 1, z: 0.008144851}
   m_Children: []
   m_Father: {fileID: 440183141}
@@ -215,6 +216,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 68787746}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &68787752
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 68787746}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79d3a922ed43a46beb175b5e8e6ce6dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  url: https://github.com/BrandynR
 --- !u!1 &96846580
 GameObject:
   m_ObjectHideFlags: 0
@@ -242,7 +256,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 96846580}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 0.13, y: 0, z: 0.018}
+  m_LocalPosition: {x: 0.16, y: 0, z: 0.054}
   m_LocalScale: {x: 0.007403615, y: 1, z: 0.008144851}
   m_Children: []
   m_Father: {fileID: 440183141}
@@ -334,7 +348,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 427427755}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0.08050674, z: 0.0349}
+  m_LocalPosition: {x: 0, y: 0.08050674, z: 0.102}
   m_LocalScale: {x: 0.04, y: 0.04, z: 0.1}
   m_Children: []
   m_Father: {fileID: 440183141}
@@ -404,6 +418,7 @@ GameObject:
   - component: {fileID: 440183138}
   - component: {fileID: 440183137}
   - component: {fileID: 440183136}
+  - component: {fileID: 440183142}
   m_Layer: 0
   m_Name: ImageTarget
   m_TagString: Untagged
@@ -501,14 +516,14 @@ MonoBehaviour:
   m_Script: {fileID: -1631628248, guid: 4bc5fd733b147194692297d23f623541, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mTrackableName: ARcard
+  mTrackableName: Card_scaled
   mInitializedInEditor: 1
   mDataSetPath: Vuforia/ARbusinesscard.xml
-  mAspectRatio: 0.99827
-  mImageTargetType: 0
-  mWidth: 0.1
-  mHeight: 0.099827
-  mRuntimeTexture: {fileID: 0}
+  mAspectRatio: 0.99826694
+  mImageTargetType: 3
+  mWidth: 0.2
+  mHeight: 0.19965339
+  mRuntimeTexture: {fileID: 2800000, guid: ea87658a5ada4994a3202d2be219f4df, type: 3}
 --- !u!4 &440183141
 Transform:
   m_ObjectHideFlags: 0
@@ -530,6 +545,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &440183142
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 440183135}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &589638307
 GameObject:
   m_ObjectHideFlags: 0
@@ -542,6 +576,8 @@ GameObject:
   - component: {fileID: 589638311}
   - component: {fileID: 589638310}
   - component: {fileID: 589638309}
+  - component: {fileID: 589638313}
+  - component: {fileID: 589638312}
   m_Layer: 0
   m_Name: Plane
   m_TagString: Untagged
@@ -557,8 +593,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 589638307}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: -0.002, y: 0, z: 0}
-  m_LocalScale: {x: 0.012779341, y: 1, z: 0.011966684}
+  m_LocalPosition: {x: 0, y: 0, z: 0.001}
+  m_LocalScale: {x: 0.019815646, y: 1, z: 0.020023853}
   m_Children: []
   m_Father: {fileID: 440183141}
   m_RootOrder: 0
@@ -624,6 +660,34 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 589638307}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &589638312
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 589638307}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d27f72790fde49f8b25fd68a1e06ee1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationSpeed: 1
+  rightSide: 0
+  onOff: 0
+--- !u!65 &589638313
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 589638307}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 10, y: 2.220446e-16, z: 10}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -729,6 +793,7 @@ GameObject:
   - component: {fileID: 952179355}
   - component: {fileID: 952179354}
   - component: {fileID: 952179353}
+  - component: {fileID: 952179358}
   m_Layer: 0
   m_Name: ARCamera
   m_TagString: MainCamera
@@ -821,12 +886,25 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 952179352}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0.016}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &952179358
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 952179352}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79d3a922ed43a46beb175b5e8e6ce6dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  url: 
 --- !u!1 &954285094
 GameObject:
   m_ObjectHideFlags: 0
@@ -854,7 +932,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 954285094}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: -0.13, y: 0, z: -0.088}
+  m_LocalPosition: {x: -0.16, y: 0, z: -0.088}
   m_LocalScale: {x: 0.007403615, y: 1, z: 0.008144851}
   m_Children: []
   m_Father: {fileID: 440183141}
@@ -928,7 +1006,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: 'ARcardMaterial
+  m_Name: 'Card_scaledMaterial
 
     13780'
   m_Shader: {fileID: 10752, guid: 0000000000000000f000000000000000, type: 0}
@@ -943,7 +1021,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 812885eb355b4f548b15ed64897f429d, type: 3}
+        m_Texture: {fileID: 2800000, guid: ea87658a5ada4994a3202d2be219f4df, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats: []
@@ -967,7 +1045,7 @@ Mesh:
     vertexCount: 4
     localAABB:
       m_Center: {x: 0, y: 0, z: 0}
-      m_Extent: {x: 0.05, y: 0, z: 0.0499135}
+      m_Extent: {x: 0.1, y: 0, z: 0.09982669}
   m_Shapes:
     vertices: []
     shapes: []
@@ -1046,7 +1124,7 @@ Mesh:
       format: 0
       dimension: 0
     m_DataSize: 128
-    _typelessdata: cdcc4cbd0000000019724cbd000000000000803f000000000000000000000000cdcc4cbd0000000019724c3d000000000000803f00000000000000000000803fcdcc4c3d0000000019724cbd000000000000803f000000000000803f00000000cdcc4c3d0000000019724c3d000000000000803f000000000000803f0000803f
+    _typelessdata: cdccccbd00000000f071ccbd000000000000803f000000000000000000000000cdccccbd00000000f071cc3d000000000000803f00000000000000000000803fcdcccc3d00000000f071ccbd000000000000803f000000000000803f00000000cdcccc3d00000000f071cc3d000000000000803f000000000000803f0000803f
   m_CompressedMesh:
     m_Vertices:
       m_NumItems: 0
@@ -1139,7 +1217,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2083239462}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 0.13, y: 0, z: -0.088}
+  m_LocalPosition: {x: 0.16, y: 0, z: -0.088}
   m_LocalScale: {x: 0.007403615, y: 1, z: 0.008144851}
   m_Children: []
   m_Father: {fileID: 440183141}
@@ -1231,7 +1309,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2085247951}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0.08050674, z: -0.1383}
+  m_LocalPosition: {x: 0, y: 0.08050674, z: -0.156}
   m_LocalScale: {x: 0.04, y: 0.04, z: 0.1}
   m_Children: []
   m_Father: {fileID: 440183141}
