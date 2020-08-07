@@ -24,4 +24,3 @@
          print("Which also triggered this method as a UnityEvent!");
      }
  }
- 
