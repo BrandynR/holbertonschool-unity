@@ -6,7 +6,6 @@ public class DoorOpen : MonoBehaviour
 {
     public Animator doorAnimator;
     public Transform player;
-    public GameObject mini;
 
     public void Interact()
     {
@@ -19,7 +18,7 @@ public class DoorOpen : MonoBehaviour
     bool InRange()
     {
         float dist = Vector3.Distance(player.position, transform.position);
-        if (dist <= 1f)
+        if (dist <= 2f)
         {
             return (true);
         }
@@ -28,6 +27,7 @@ public class DoorOpen : MonoBehaviour
 
     public void DoorTrigger()
     {
-        doorAnimator.SetTrigger("character_nearby");
+        doorAnimator.SetBool("character_nearby", true);
+        Debug.Log("Opening Door");
     }
 }
