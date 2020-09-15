@@ -591,6 +591,8 @@ GameObject:
   - component: {fileID: 1080210704}
   - component: {fileID: 78113476}
   - component: {fileID: 78113475}
+  - component: {fileID: 78113478}
+  - component: {fileID: 78113477}
   m_Layer: 0
   m_Name: floor_2_L (3)
   m_TagString: Untagged
@@ -634,6 +636,45 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fea6f8eea666334aaf9869ad8f7bcda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &78113477
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 78113474}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b61095e78ca0347a5a512bb315857b42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1136318568}
+--- !u!114 &78113478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 78113474}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57965e99b275c4588b53fc7381ff5336, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 78113477}
+        m_MethodName: TeleportPlayer
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &87409452
 GameObject:
   m_ObjectHideFlags: 0
@@ -647,6 +688,8 @@ GameObject:
   - component: {fileID: 87409456}
   - component: {fileID: 87409455}
   - component: {fileID: 87409454}
+  - component: {fileID: 87409458}
+  - component: {fileID: 87409457}
   m_Layer: 0
   m_Name: floor_2_L_LOD0
   m_TagString: Untagged
@@ -734,6 +777,45 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 87409452}
   m_Mesh: {fileID: 4300000, guid: dd0e6c5981600b342aae11c813c53c17, type: 3}
+--- !u!114 &87409457
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 87409452}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b61095e78ca0347a5a512bb315857b42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1136318568}
+--- !u!114 &87409458
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 87409452}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57965e99b275c4588b53fc7381ff5336, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 87409457}
+        m_MethodName: TeleportPlayer
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &93208998
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3549,6 +3631,8 @@ GameObject:
   - component: {fileID: 412491203}
   - component: {fileID: 412491202}
   - component: {fileID: 412491201}
+  - component: {fileID: 412491206}
+  - component: {fileID: 412491205}
   m_Layer: 0
   m_Name: floor_2_blank
   m_TagString: Untagged
@@ -3631,6 +3715,45 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fea6f8eea666334aaf9869ad8f7bcda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &412491205
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 412491200}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57965e99b275c4588b53fc7381ff5336, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 412491206}
+        m_MethodName: TeleportPlayer
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &412491206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 412491200}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b61095e78ca0347a5a512bb315857b42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1136318568}
 --- !u!1001 &412938748
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4614,6 +4737,8 @@ GameObject:
   - component: {fileID: 550557030}
   - component: {fileID: 550557029}
   - component: {fileID: 550557028}
+  - component: {fileID: 550557032}
+  - component: {fileID: 550557031}
   m_Layer: 0
   m_Name: floor_2 (7)
   m_TagString: Untagged
@@ -4671,6 +4796,45 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fea6f8eea666334aaf9869ad8f7bcda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &550557031
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 550557027}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57965e99b275c4588b53fc7381ff5336, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 550557032}
+        m_MethodName: TeleportPlayer
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &550557032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 550557027}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b61095e78ca0347a5a512bb315857b42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1136318568}
 --- !u!1001 &550798699
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5015,6 +5179,8 @@ GameObject:
   - component: {fileID: 1514967598}
   - component: {fileID: 621979562}
   - component: {fileID: 621979561}
+  - component: {fileID: 621979564}
+  - component: {fileID: 621979563}
   m_Layer: 0
   m_Name: floor_2_L (2)
   m_TagString: Untagged
@@ -5058,6 +5224,45 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fea6f8eea666334aaf9869ad8f7bcda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &621979563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 621979560}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57965e99b275c4588b53fc7381ff5336, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 621979564}
+        m_MethodName: TeleportPlayer
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &621979564
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 621979560}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b61095e78ca0347a5a512bb315857b42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1136318568}
 --- !u!1001 &625806045
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5443,6 +5648,8 @@ GameObject:
   - component: {fileID: 698865245}
   - component: {fileID: 698865244}
   - component: {fileID: 698865243}
+  - component: {fileID: 698865247}
+  - component: {fileID: 698865246}
   m_Layer: 0
   m_Name: floor_2_L_LOD0
   m_TagString: Untagged
@@ -5530,6 +5737,45 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 698865241}
   m_Mesh: {fileID: 4300000, guid: dd0e6c5981600b342aae11c813c53c17, type: 3}
+--- !u!114 &698865246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 698865241}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b61095e78ca0347a5a512bb315857b42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1136318568}
+--- !u!114 &698865247
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 698865241}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57965e99b275c4588b53fc7381ff5336, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 698865246}
+        m_MethodName: TeleportPlayer
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &702471846
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9556,6 +9802,8 @@ GameObject:
   - component: {fileID: 1162641444}
   - component: {fileID: 1162641443}
   - component: {fileID: 1162641442}
+  - component: {fileID: 1162641446}
+  - component: {fileID: 1162641445}
   m_Layer: 0
   m_Name: floor_2 (9)
   m_TagString: Untagged
@@ -9613,6 +9861,45 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fea6f8eea666334aaf9869ad8f7bcda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1162641445
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1162641441}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b61095e78ca0347a5a512bb315857b42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1136318568}
+--- !u!114 &1162641446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1162641441}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57965e99b275c4588b53fc7381ff5336, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1162641445}
+        m_MethodName: TeleportPlayer
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!4 &1190539190 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 446996, guid: ae0c21b643679c045b98cb678e8abef5,
@@ -10432,6 +10719,8 @@ GameObject:
   - component: {fileID: 1311924345}
   - component: {fileID: 1311924344}
   - component: {fileID: 1311924343}
+  - component: {fileID: 1311924347}
+  - component: {fileID: 1311924346}
   m_Layer: 0
   m_Name: floor_2_L_LOD0
   m_TagString: Untagged
@@ -10519,6 +10808,45 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1311924341}
   m_Mesh: {fileID: 4300000, guid: dd0e6c5981600b342aae11c813c53c17, type: 3}
+--- !u!114 &1311924346
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1311924341}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57965e99b275c4588b53fc7381ff5336, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1311924347}
+        m_MethodName: TeleportPlayer
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1311924347
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1311924341}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b61095e78ca0347a5a512bb315857b42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1136318568}
 --- !u!1001 &1314879323
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10789,6 +11117,8 @@ GameObject:
   - component: {fileID: 1338788924}
   - component: {fileID: 1338788926}
   - component: {fileID: 1338788925}
+  - component: {fileID: 1338788928}
+  - component: {fileID: 1338788927}
   m_Layer: 0
   m_Name: floor_2_LOD0
   m_TagString: Untagged
@@ -10862,6 +11192,45 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1338788923}
   m_Mesh: {fileID: 4300000, guid: 932518e1472904244afe21e844fd83ab, type: 3}
+--- !u!114 &1338788927
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1338788923}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b61095e78ca0347a5a512bb315857b42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1136318568}
+--- !u!114 &1338788928
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1338788923}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57965e99b275c4588b53fc7381ff5336, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1338788927}
+        m_MethodName: TeleportPlayer
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1339947857
 GameObject:
   m_ObjectHideFlags: 0
@@ -10875,6 +11244,8 @@ GameObject:
   - component: {fileID: 1339947861}
   - component: {fileID: 1339947860}
   - component: {fileID: 1339947859}
+  - component: {fileID: 1339947863}
+  - component: {fileID: 1339947862}
   m_Layer: 0
   m_Name: floor_2_L_LOD0
   m_TagString: Untagged
@@ -10962,6 +11333,45 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1339947857}
   m_Mesh: {fileID: 4300000, guid: dd0e6c5981600b342aae11c813c53c17, type: 3}
+--- !u!114 &1339947862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1339947857}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b61095e78ca0347a5a512bb315857b42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1136318568}
+--- !u!114 &1339947863
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1339947857}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57965e99b275c4588b53fc7381ff5336, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1339947862}
+        m_MethodName: TeleportPlayer
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &1356267548
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11816,6 +12226,7 @@ GameObject:
   - component: {fileID: 1448608419}
   - component: {fileID: 1448608422}
   - component: {fileID: 1448608421}
+  - component: {fileID: 1448608418}
   m_Layer: 0
   m_Name: Rope
   m_TagString: Untagged
@@ -11823,6 +12234,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &1448608418
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1448608417}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57965e99b275c4588b53fc7381ff5336, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1448608419
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12373,6 +12799,8 @@ GameObject:
   - component: {fileID: 25448901}
   - component: {fileID: 1491069423}
   - component: {fileID: 1491069422}
+  - component: {fileID: 1491069425}
+  - component: {fileID: 1491069424}
   m_Layer: 0
   m_Name: floor_2_L (4)
   m_TagString: Untagged
@@ -12416,6 +12844,45 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fea6f8eea666334aaf9869ad8f7bcda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1491069424
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1491069421}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57965e99b275c4588b53fc7381ff5336, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1491069425}
+        m_MethodName: TeleportPlayer
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1491069425
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1491069421}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b61095e78ca0347a5a512bb315857b42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1136318568}
 --- !u!1001 &1493208298
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12492,6 +12959,8 @@ GameObject:
   - component: {fileID: 1508252982}
   - component: {fileID: 1508252981}
   - component: {fileID: 1508252980}
+  - component: {fileID: 1508252984}
+  - component: {fileID: 1508252983}
   m_Layer: 0
   m_Name: floor_2 (6)
   m_TagString: Untagged
@@ -12549,6 +13018,45 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fea6f8eea666334aaf9869ad8f7bcda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1508252983
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1508252979}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57965e99b275c4588b53fc7381ff5336, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1508252984}
+        m_MethodName: TeleportPlayer
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1508252984
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1508252979}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b61095e78ca0347a5a512bb315857b42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1136318568}
 --- !u!4 &1514967598
 Transform:
   m_ObjectHideFlags: 0
@@ -12853,6 +13361,8 @@ GameObject:
   - component: {fileID: 1535208377}
   - component: {fileID: 1535208376}
   - component: {fileID: 1535208375}
+  - component: {fileID: 1535208380}
+  - component: {fileID: 1535208379}
   m_Layer: 0
   m_Name: floor_2_blank (1)
   m_TagString: Untagged
@@ -12935,6 +13445,45 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fea6f8eea666334aaf9869ad8f7bcda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1535208379
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1535208374}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b61095e78ca0347a5a512bb315857b42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1136318568}
+--- !u!114 &1535208380
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1535208374}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57965e99b275c4588b53fc7381ff5336, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1535208379}
+        m_MethodName: TeleportPlayer
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1552610298
 GameObject:
   m_ObjectHideFlags: 0
@@ -14259,6 +14808,8 @@ GameObject:
   - component: {fileID: 458614921}
   - component: {fileID: 1698031166}
   - component: {fileID: 1698031165}
+  - component: {fileID: 1698031168}
+  - component: {fileID: 1698031167}
   m_Layer: 0
   m_Name: floor_2_L (1)
   m_TagString: Untagged
@@ -14302,6 +14853,45 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fea6f8eea666334aaf9869ad8f7bcda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1698031167
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1698031164}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57965e99b275c4588b53fc7381ff5336, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1698031168}
+        m_MethodName: TeleportPlayer
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1698031168
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1698031164}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b61095e78ca0347a5a512bb315857b42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1136318568}
 --- !u!1001 &1701345485
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15542,6 +16132,8 @@ GameObject:
   - component: {fileID: 1838999632}
   - component: {fileID: 1838999634}
   - component: {fileID: 1838999633}
+  - component: {fileID: 1838999636}
+  - component: {fileID: 1838999635}
   m_Layer: 0
   m_Name: floor_2_LOD0
   m_TagString: Untagged
@@ -15615,6 +16207,45 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1838999631}
   m_Mesh: {fileID: 4300000, guid: 932518e1472904244afe21e844fd83ab, type: 3}
+--- !u!114 &1838999635
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1838999631}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b61095e78ca0347a5a512bb315857b42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1136318568}
+--- !u!114 &1838999636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1838999631}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57965e99b275c4588b53fc7381ff5336, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1838999635}
+        m_MethodName: TeleportPlayer
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1841393888
 GameObject:
   m_ObjectHideFlags: 0
@@ -15849,6 +16480,8 @@ GameObject:
   - component: {fileID: 1882845579}
   - component: {fileID: 1882845581}
   - component: {fileID: 1882845580}
+  - component: {fileID: 1882845583}
+  - component: {fileID: 1882845582}
   m_Layer: 0
   m_Name: floor_2_LOD0
   m_TagString: Untagged
@@ -15922,6 +16555,45 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1882845578}
   m_Mesh: {fileID: 4300000, guid: 932518e1472904244afe21e844fd83ab, type: 3}
+--- !u!114 &1882845582
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1882845578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b61095e78ca0347a5a512bb315857b42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1136318568}
+--- !u!114 &1882845583
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1882845578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57965e99b275c4588b53fc7381ff5336, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1882845582}
+        m_MethodName: TeleportPlayer
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &1884049313
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15985,6 +16657,8 @@ GameObject:
   - component: {fileID: 1885133830}
   - component: {fileID: 1885133832}
   - component: {fileID: 1885133831}
+  - component: {fileID: 1885133834}
+  - component: {fileID: 1885133833}
   m_Layer: 0
   m_Name: floor_2_LOD0
   m_TagString: Untagged
@@ -16058,6 +16732,45 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1885133829}
   m_Mesh: {fileID: 4300000, guid: 932518e1472904244afe21e844fd83ab, type: 3}
+--- !u!114 &1885133833
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1885133829}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b61095e78ca0347a5a512bb315857b42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1136318568}
+--- !u!114 &1885133834
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1885133829}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57965e99b275c4588b53fc7381ff5336, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1885133833}
+        m_MethodName: TeleportPlayer
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &1911481289
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17053,6 +17766,8 @@ GameObject:
   - component: {fileID: 2054009173}
   - component: {fileID: 2054009172}
   - component: {fileID: 2054009171}
+  - component: {fileID: 2054009175}
+  - component: {fileID: 2054009174}
   m_Layer: 0
   m_Name: floor_2 (8)
   m_TagString: Untagged
@@ -17110,6 +17825,45 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fea6f8eea666334aaf9869ad8f7bcda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2054009174
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2054009170}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b61095e78ca0347a5a512bb315857b42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1136318568}
+--- !u!114 &2054009175
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2054009170}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57965e99b275c4588b53fc7381ff5336, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2054009174}
+        m_MethodName: TeleportPlayer
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &2063180362
 PrefabInstance:
   m_ObjectHideFlags: 0
