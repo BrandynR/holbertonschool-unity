@@ -12,6 +12,7 @@ namespace UnityEngine.XR.ARFoundation.Samples
         [SerializeField]
         [Tooltip("Instantiates this prefab on a plane at the touch location.")]
         GameObject m_PlacedPrefab;
+        public GameObject startButton;
 
         /// <summary>
         /// The prefab to instantiate on touch.
@@ -54,11 +55,13 @@ namespace UnityEngine.XR.ARFoundation.Samples
                         Pose hitPose = s_Hits[0].pose;
 
                         spawnedObject = Instantiate(m_PlacedPrefab, hitPose.position, hitPose.rotation);
+                        startButton.SetActive(true);
 
                         if (onPlacedObject != null)
                         {
                             onPlacedObject();
                         }
+
                     }
                 }
             }
