@@ -20,7 +20,7 @@ public class SelectPlane : MonoBehaviour
 	static List<ARRaycastHit> s_Hits = new List<ARRaycastHit>();
 	static int flag;
 
-	public int numberOfTargets;
+	public int numberOfTargets = 5;
 	public GameObject spawnedObject { get; private set; }
 	public GameObject startButton;
 	public GameObject placedPrefab;
