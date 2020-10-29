@@ -48,6 +48,8 @@ public class SelectPlane : MonoBehaviour
 						chosenPlane = m_PlaneManager.GetPlane(s_Hits[0].trackableId);
 						Vector3 newCenter = new Vector3(chosenPlane.center.x, chosenPlane.center.y, chosenPlane.center.z);
 						spawnedObject = Instantiate(placedPrefab, newCenter, Quaternion.identity);
+						startButton.SetActive(true);
+
 						for (int j = 1; j < numberOfTargets; i += 0.07f, j++, k -= 0.07f)
 						{
 							spawnedObject = Instantiate(placedPrefab, newCenter + new Vector3(i, 0, k), Quaternion.identity);
@@ -56,7 +58,7 @@ public class SelectPlane : MonoBehaviour
 						{
 							plane.gameObject.SetActive(false);
 						}
-						startGame();
+						//startGame();
 						flag = 1;
 					}
 				}
@@ -74,4 +76,5 @@ public class SelectPlane : MonoBehaviour
 		ammoFuncScript.enabled = true;
 		selectPlaneScript.enabled = false;
 	}
+
 }

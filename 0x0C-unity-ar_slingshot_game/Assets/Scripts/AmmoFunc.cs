@@ -5,7 +5,6 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.XR.ARFoundation;
 using UnityEngine.XR.ARSubsystems;
-using UnityEngine.Audio;
 
 /// <summary>
 /// The game's functionality. WIP!
@@ -104,11 +103,6 @@ public class AmmoFunc : MonoBehaviour
 	/// </summary>
 	public Camera mainCamera;
 
-	public AudioSource introMusic;
-	public AudioSource ammoPickup;
-	public AudioSource ammoDrop;
-	public AudioSource gameOver;
-
 	/// <summary>
 	/// Component references and scripts get initialized
 	/// </summary>
@@ -118,7 +112,7 @@ public class AmmoFunc : MonoBehaviour
 		m_ReferencePoint = GetComponent<ARReferencePointManager>();
 		ammoFuncScript = GetComponent<AmmoFunc>();
 		selectPlaneScript = GetComponent<SelectPlane>();
-		introMusic.Play();
+		
 	}
 
 	/// <summary>
@@ -129,7 +123,6 @@ public class AmmoFunc : MonoBehaviour
 		// Checks to see if player is out of ammo. If so, triggers the replay canvas
 		if (outOfAmmo)
 		{
-			gameOver.Play();
 			replayCanvas.SetActive(true);
 		}
 
@@ -138,7 +131,7 @@ public class AmmoFunc : MonoBehaviour
 		// game object - ammo. Center position of ammo is also set.
 		if (flag == 0)
 		{
-			gameCanvas.SetActive(true);
+			//gameCanvas.SetActive(true);
 			spawnedObjectRef = m_ReferencePoint.AddReferencePoint(ammoPose);
 			spawnedObjectRef.transform.SetParent(mainCamera.transform, false);
 			ammo = mainCamera.gameObject.transform.GetChild(0).gameObject;
@@ -147,9 +140,10 @@ public class AmmoFunc : MonoBehaviour
 		}
 
 		// Detects if player touches the screen.
-		if (spawnedObjectRef && Input.touchCount > 0)
+		/*if (spawnedObjectRef && Input.touchCount > 0)
 		{
-			ammoPickup.Play();
+			ammo.SetActive(true);
+		}
 			if ((Input.GetTouch(0).phase == TouchPhase.Moved))
 			{
 				Touch touch = Input.GetTouch(0);
@@ -163,7 +157,6 @@ public class AmmoFunc : MonoBehaviour
 			// Occurs when player releases the ammo
 			if (Input.GetTouch(0).phase == TouchPhase.Ended)
 			{
-				ammoDrop.Play();
 				ammo.transform.position = centerPos;
 				scoreText.text = "Score: " + score.ToString();
 				score += 5;
@@ -185,13 +178,13 @@ public class AmmoFunc : MonoBehaviour
 					outOfAmmo = true;
 				}
 			}
-		}
+		}*/
 	}
 
 	/// <summary>
 	/// Restarts the game by reseting everything score and ammo count
 	/// </summary>
-	public void restartGame()
+	/*public void restartGame()
 	{
 		scoreText.text = "Score: 0";
 		score = 0;
@@ -205,7 +198,7 @@ public class AmmoFunc : MonoBehaviour
 		outOfAmmo = false;
 		if (replayCanvas.activeSelf)
 			replayCanvas.SetActive(false);
-	}
+	}*/
 
 	/// <summary>
 	/// Disaplays the quit game canvas

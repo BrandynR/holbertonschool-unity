@@ -33,6 +33,7 @@ namespace UnityEngine.XR.ARFoundation.Samples
         /// </summary>
         public static event Action onPlacedObject;
 
+        ARPlaneManager planeManager;
         ARRaycastManager m_RaycastManager;
 
         static List<ARRaycastHit> s_Hits = new List<ARRaycastHit>();
@@ -40,6 +41,7 @@ namespace UnityEngine.XR.ARFoundation.Samples
         void Awake()
         {
             m_RaycastManager = GetComponent<ARRaycastManager>();
+            planeManager = GetComponent<ARPlaneManager>();
         }
 
         void Update()
@@ -64,6 +66,14 @@ namespace UnityEngine.XR.ARFoundation.Samples
 
                     }
                 }
+            }
+        }
+
+        public void StopPlane()
+        {
+            foreach (var plane in planeManager.trackables)
+            {
+                plane.gameObject.SetActive(false);
             }
         }
     }
