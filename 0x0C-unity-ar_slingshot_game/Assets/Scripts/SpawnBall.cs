@@ -10,6 +10,6 @@ public class SpawnBall : MonoBehaviour {
 	public void Spawn()
 	{
 		ball.SetActive(true);
-		Instantiate (ball, new Vector3(0f, 1f, -8f), Quaternion.identity);
+		Instantiate (ball, new Vector3(0f, 0f, 1f), Quaternion.identity);
 	}
 }

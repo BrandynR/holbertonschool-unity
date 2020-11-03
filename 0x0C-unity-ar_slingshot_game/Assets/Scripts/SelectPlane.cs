@@ -50,7 +50,7 @@ public class SelectPlane : MonoBehaviour
 						spawnedObject = Instantiate(placedPrefab, newCenter, Quaternion.identity);
 						startButton.SetActive(true);
 
-						for (int j = 1; j < numberOfTargets; i += 0.07f, j++, k -= 0.07f)
+						for (int j = 1; j < numberOfTargets; i += 0.09f, j++, k -= 0.09f)
 						{
 							spawnedObject = Instantiate(placedPrefab, newCenter + new Vector3(i, 0, k), Quaternion.identity);
 						}

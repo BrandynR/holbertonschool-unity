@@ -210,6 +210,7 @@ GameObject:
   - component: {fileID: 143852173}
   - component: {fileID: 143852175}
   - component: {fileID: 143852174}
+  - component: {fileID: 143852176}
   m_Layer: 0
   m_Name: Indicator Plane
   m_TagString: Untagged
@@ -278,6 +279,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 143852172}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &143852176
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 143852172}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f7101de6c1e049e19ecf03bb6bfff0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ball: {fileID: 9143979492527311176, guid: 207d1e6798b41461b8c6350cf597cb5a, type: 3}
 --- !u!1 &196105827
 GameObject:
   m_ObjectHideFlags: 0
@@ -1130,7 +1144,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 300, y: 200}
+  m_SizeDelta: {x: 300, y: 300}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &853978347
 MonoBehaviour:
@@ -1314,7 +1328,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   numberOfTargets: 5
   startButton: {fileID: 1740736507}
-  placedPrefab: {fileID: 5478470890158230207, guid: 154f404aade434573afec044b33c838f,
+  placedPrefab: {fileID: 1479208766464490, guid: e45a69c421144304c8d8176026d3fd7b,
     type: 3}
 --- !u!114 &969674227
 MonoBehaviour:
@@ -1513,6 +1527,17 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 969674227}
         m_MethodName: restartGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1847709345}
+        m_MethodName: Restart
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1896,7 +1921,7 @@ RectTransform:
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 300, y: 200}
+  m_SizeDelta: {x: 300, y: 300}
   m_Pivot: {x: 1, y: 0}
 --- !u!114 &1414849675
 MonoBehaviour:
@@ -2826,6 +2851,7 @@ GameObject:
   - component: {fileID: 1847709343}
   - component: {fileID: 1847709342}
   - component: {fileID: 1847709341}
+  - component: {fileID: 1847709345}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -2917,6 +2943,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1847709345
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1847709340}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8362cd159348e439694957adef54d7c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1968402188
 GameObject:
   m_ObjectHideFlags: 0
@@ -3000,7 +3038,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1970213733, guid: 207d1e6798b41461b8c6350cf597cb5a, type: 3}
       propertyPath: throwForceInZ
-      value: 25
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 9143979492527311176, guid: 207d1e6798b41461b8c6350cf597cb5a,
         type: 3}
@@ -3106,8 +3144,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 100}
-  m_SizeDelta: {x: 400, y: 100}
+  m_AnchoredPosition: {x: 0, y: 120}
+  m_SizeDelta: {x: 800, y: 175}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &1972783745
 MonoBehaviour:
@@ -3152,7 +3190,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1577749884}
+      - m_Target: {fileID: 143852176}
         m_MethodName: Spawn
         m_Mode: 1
         m_Arguments:

@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 9143979492527311179}
   - component: {fileID: 1970213734}
   - component: {fileID: 1970213733}
+  - component: {fileID: 3502080059315712296}
   m_Layer: 0
   m_Name: Ammo
   m_TagString: Ammo
@@ -125,3 +126,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   throwForceInXandY: 1
   throwForceInZ: 50
+--- !u!114 &3502080059315712296
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9143979492527311176}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed8703033fde641cf933dc529aab1473, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  draggingTag: Ammo
+  cam: {fileID: 1250685032186523638, guid: 842f1b3488834472585bb383e8545476, type: 3}
