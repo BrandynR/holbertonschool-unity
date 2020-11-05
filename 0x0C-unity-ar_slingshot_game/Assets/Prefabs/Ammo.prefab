@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 7035452295160938009}
   - component: {fileID: 5808648725067174785}
   - component: {fileID: 1539389022071962408}
+  - component: {fileID: 1317917148503942700}
   m_Layer: 0
   m_Name: Ammo
   m_TagString: Ammo
@@ -111,9 +112,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   throwForceInXandY: 1
-  throwForceInZ: 5
-  ammoHolder: {fileID: 6808294557269862143, guid: f36a83e741f6141399d348b0d35b1f8f,
-    type: 3}
+  throwForceInZ: 10
 --- !u!114 &3502080059315712296
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -263,3 +262,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1317917148503942700
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9143979492527311176}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f7101de6c1e049e19ecf03bb6bfff0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ball: {fileID: 9143979492527311176}
+  ammoHolder: {fileID: 6808294557269862143, guid: f36a83e741f6141399d348b0d35b1f8f,
+    type: 3}
