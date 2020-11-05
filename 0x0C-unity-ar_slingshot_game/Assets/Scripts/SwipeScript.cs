@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SwipeScript : MonoBehaviour {
 
-	Vector2 startPos, endPos, direction; // touch start position, touch end position, swipe direction
+	Vector3 startPos, endPos, direction; // touch start position, touch end position, swipe direction
 	float touchTimeStart, touchTimeFinish, timeInterval; // to calculate swipe time to sontrol throw force in Z direction
 
 	[SerializeField]
@@ -14,14 +14,18 @@ public class SwipeScript : MonoBehaviour {
 	float throwForceInZ = 50f; // to control throw force in Z direction
 
 	Rigidbody rb;
+	private LineRenderer lineRenderer;
+	//public Transform ammoHolder;
 
 	void Start()
 	{
 		rb = GetComponent<Rigidbody> ();
+		lineRenderer = GetComponent<LineRenderer>();
 	}
 
 	// Update is called once per frame
-	void Update () {
+	void Update ()
+	{
 
 		// if you touch the screen
 		if (Input.touchCount > 0 && Input.GetTouch (0).phase == TouchPhase.Began) {
@@ -29,10 +33,13 @@ public class SwipeScript : MonoBehaviour {
 			// getting touch position and marking time when you touch the screen
 			touchTimeStart = Time.time;
 			startPos = Input.GetTouch (0).position;
+			//startPos = ammoHolder.position;
+			lineRenderer.enabled=true;
 		}
 
 		// if you release your finger
-		if (Input.touchCount > 0 && Input.GetTouch (0).phase == TouchPhase.Ended) {
+		if (Input.touchCount > 0 && Input.GetTouch (0).phase == TouchPhase.Ended) 
+		{
 
 			// marking time when you release it
 			touchTimeFinish = Time.time;
@@ -50,10 +57,12 @@ public class SwipeScript : MonoBehaviour {
 			rb.isKinematic = false;
 			rb.AddForce (- direction.x * throwForceInXandY, - direction.y * throwForceInXandY, throwForceInZ / timeInterval);
 
-			// Destroy ball in 4 seconds
+			// diasable line render
+			lineRenderer.enabled=false;
+
+			// Destroy ball in 5 seconds
 			Destroy (gameObject, 5f);
 
 		}
-			
-	}
+	}		
 }
