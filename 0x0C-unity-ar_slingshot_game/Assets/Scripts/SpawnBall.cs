@@ -6,10 +6,11 @@ public class SpawnBall : MonoBehaviour {
 
 	[SerializeField]
 	public GameObject ball;
+	public Transform ammoHolder;
 
 	public void Spawn()
 	{
 		ball.SetActive(true);
-		Instantiate (ball, new Vector3(0f, 0f, 1f), Quaternion.identity);
+		Instantiate(ball, ammoHolder.position, Quaternion.identity);
 	}
 }

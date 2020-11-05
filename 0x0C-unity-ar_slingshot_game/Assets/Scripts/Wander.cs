@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+
 /// <summary>
 /// Creates wandering behaviour for a CharacterController.
 /// </summary>
@@ -10,6 +11,7 @@ public class Wander : MonoBehaviour
 	public float speed = 5;
 	public float directionChangeInterval = 1;
 	public float maxHeadingChange = 30;
+	Animation anim;
 
 	CharacterController controller;
 	float heading;
@@ -18,6 +20,7 @@ public class Wander : MonoBehaviour
 	void Awake ()
 	{
 		controller = GetComponent<CharacterController>();
+		anim = GetComponent<Animation>();
 
 		// Set random initial rotation
 		heading = Random.Range(0, 360);
@@ -31,6 +34,7 @@ public class Wander : MonoBehaviour
 		transform.eulerAngles = Vector3.Slerp(transform.eulerAngles, targetRotation, Time.deltaTime * directionChangeInterval);
 		var forward = transform.TransformDirection(Vector3.forward);
 		controller.SimpleMove(forward * speed);
+
 	}
 
 	/// <summary>
