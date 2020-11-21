@@ -17,6 +17,8 @@ public class SwipeScript : MonoBehaviour {
 	private LineRenderer lineRenderer;
 	//public Transform ammoHolder;
 
+	//public SpawnBall spawnBallscript;
+
 	void Start()
 	{
 		rb = GetComponent<Rigidbody> ();
@@ -60,8 +62,9 @@ public class SwipeScript : MonoBehaviour {
 			// diasable line render
 			lineRenderer.enabled=false;
 
-			// Destroy ball in 5 seconds
-			Destroy (gameObject, 5f);
+			// Destroy ball in 3 seconds
+			Destroy (gameObject, 3f);
+			//spawnBallscript.Spawn();
 
 		}
 	}		
