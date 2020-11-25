@@ -56,7 +56,7 @@ You can change the following properties of the shader in the Inspector window:
 - Wave frequency
 
 ### Download
-Utilizing Unity 2019.4 LTS or later import this asset package into your project.
-Download the Shadergraph assets created for this project here:
- - https://www.dropbox.com/s/pexny0v654ruu56/0x0D-unity-shaders.unitypackage?dl=0
- 
+- Utilizing Unity 2019.4 LTS or later import this asset package into your project.
+- Make sure to have Universal RP enabled in your project or dependencies will be lost.
+- Download the Shadergraph assets created for this project here:
+  https://www.dropbox.com/s/pexny0v654ruu56/0x0D-unity-shaders.unitypackage?dl=0
